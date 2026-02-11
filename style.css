@@ -1,12 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0c0c0cff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 80%;
+}
+nav a img{
+    width: 150px;
+    height: auto;
+}
 h1{
     color: #ffd700ff;
 }
-body {
-    background-color: #0c0c0cff;
-}
-p{
+h2{
     color: #ffd700ff;
 }
-h2{
+p{
     color: #ffd700ff;
 }
