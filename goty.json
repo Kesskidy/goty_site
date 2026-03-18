@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Clair Obscur : Expédition 33",
+    "year": 2025,
+    "image": "clair_obscur_expedition_33.jpg"
+  },
+  {
+    "name": "Astro Bot",
+    "year": 2024,
+    "image": "astro_bot.jpg"
+  },
+  {
+    "name": "Baldur's Gate 3",
+    "year": 2023,
+    "image": "baldurs_gate_3.jpg"
+  },
+  {
+    "name": "Elden Ring",
+    "year": 2022,
+    "image": "elden_ring.jpg"
+  },
+  {
+    "name": "It Takes Two",
+    "year": 2021,
+    "image": "it_takes_two.jpg"
+  },
+  {
+    "name": "The Last of Us Part II",
+    "year": 2020,
+    "image": "tlou_part_2.jpg"
+  },
+  {
+    "name": "Sekiro: Shadows Die Twice",
+    "year": 2019,
+    "image": "sekiro.jpg"
+  },
+  {
+    "name": "God of War",
+    "year": 2018,
+    "image": "god_of_war.jpg"
+  },
+  {
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "year": 2017,
+    "image": "botw.jpg"
+  },
+  {
+    "name": "Overwatch",
+    "year": 2016,
+    "image": "overwatch.jpg"
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt",
+    "year": 2015,
+    "image": "the_witcher_3.jpg"
+  },
+  {
+    "name": "Dragon Age: Inquisition",
+    "year": 2014,
+    "image": "dragon_age_inquisition.jpg"
+  },
+  {
+    "name": "Grand Theft Auto V",
+    "year": 2013,
+    "image": "gta_v.jpg"
+  },
+  {
+    "name": "The Walking Dead",
+    "year": 2012,
+    "image": "the_walking_dead.jpg"
+  },
+  {
+    "name": "The Elder Scrolls V: Skyrim",
+    "year": 2011,
+    "image": "skyrim.jpg"
+  },
+  {
+    "name": "Red Dead Redemption",
+    "year": 2010,
+    "image": "red_dead_redemption.jpg"
+  },
+  {
+    "name": "Uncharted 2: Among Thieves",
+    "year": 2009,
+    "image": "uncharted_2.jpg"
+  },
+  {
+    "name": "Grand Theft Auto IV",
+    "year": 2008,
+    "image": "gta_iv.jpg"
+  },
+  {
+    "name": "BioShock",
+    "year": 2007,
+    "image": "bioshock.jpg"
+  },
+  {
+    "name": "The Elder Scrolls IV: Oblivion",
+    "year": 2006,
+    "image": "oblivion.jpg"
+  },
+  {
+    "name": "Resident Evil 4",
+    "year": 2005,
+    "image": "resident_evil_4.jpg"
+  },
+  {
+    "name": "Grand Theft Auto: San Andreas",
+    "year": 2004,
+    "image": "gta_san_andreas.jpg"
+  },
+  {
+    "name": "Madden NFL 2004",
+    "year": 2003,
+    "image": "madden_2004.jpg"
+  }
+]
