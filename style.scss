@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+$font-titles: 'Fira Sans', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+$bg-dark: #1d0617;
+$gold-tga: #ffd75f;
+$max-width-site: 90%;
+
+// --- RESET & BASE ---
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+    max-width: $max-width-site;
+}
+
+// --- COMPONENTS ---
+
+header {
+    width: 100%;
+
+    nav {
+        display: block;
+        
+        .logo-lettrine {
+            float: left;
+            width: 12.5vw; 
+            height: auto;
+            
+            shape-outside: margin-box; 
+            margin-right: 1.5rem; 
+            margin-bottom: 0.5rem;
+
+            transition: transform 0.3s ease;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        h1 {
+            font-family: $font-titles;
+            font-size: 16vw;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.03em;
+            color: $gold-tga;
+            text-transform: uppercase;
+            display: inline;
+        }
+    }
+}
+
+// Groupement des titres et paragraphes
+h1, h2, h3 {
+    font-family: $font-titles;
+    color: $gold-tga;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: fit-content;
+    margin: 3vw 0;
+}
+a {
+    color: $gold-tga;
+    text-decoration: underline;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    &:hover {
+        color: lighten($gold-tga, 10%);
+    }
+}
+
+.about {
+    clear: both;
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+        margin-top: 2rem;
+        padding: 0 5%;
+    }
+
+    p {
+        font-family: $font-body;
+        color: rgba($gold-tga, 0.8);
+        width: 45%;         font-size: 1.1rem;
+        line-height: 1.8;
+        font-weight: 300;
+        text-align: justify;
+        border-left: 2px solid $gold-tga;
+        padding-left: 2rem;
+        margin-right: 5vw;
+
+        // --- CORRECTION MOBILE POUR LE PARAGRAPHE ---
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-right: 0;
+            font-size: 1rem;
+            padding-left: 1rem;
+            text-align: left;
+        }
+    }
+}
+
+// --- GOTY SECTION (Gérée par ton JS) ---
+.goty {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    // Style commun pour les blocs gauche et droite
+    &-left, &-right {
+        padding: 1rem;
+        border: 1px solid rgba($gold-tga, 0.2);
+        border-radius: 8px;
+        width: 45%;
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+    }
+
+    // Spécificités
+    &-left { align-self: flex-start; text-align: left; }
+    &-right { align-self: flex-end; text-align: right; }
+}
