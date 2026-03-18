@@ -25,3 +25,32 @@ h2{
 p{
     color: #ffd700ff;
 }
+
+.barre {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.barre-segment {
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 30px;
+    background: #ffd700;
+    opacity: 0;
+}
+
+.barre-no-gsap .barre-segment {
+    animation: slide-appear 0.7s ease-out forwards;
+}
+
+@keyframes slide-appear {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
