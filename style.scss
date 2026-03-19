@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+// --- VARIABLES ---
+$font-titles: 'Fira Sans', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+$bg-dark: #1d0617;
+$gold-tga: #ffd75f;
+$max-width-site: 1400px;
+
+// --- GRID CONFIG ---
+$columns: 12;
+$gap: 20px;
+
+// --- RESET & BASE ---
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-dark;
+    color: $gold-tga;
+    margin: 30px auto;
+    width: 90%;
+    max-width: $max-width-site;
+    // Le container principal en Grid
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    column-gap: $gap;
+}
+
+// --- COMPONENTS ---
+
+header {
+    grid-column: 1 / 13; // Prend toute la largeur
+    margin-bottom: 2rem;
+    nav {
+        display: block; // On garde le float ici pour l'effet d'imbrication (lettrine)
+        .logo-lettrine {
+            float: left;
+            width: 15%; // Environ 2 colonnes sur 12
+            max-width: 150px;
+            height: auto;
+            shape-outside: margin-box; 
+            margin-right: 2rem; 
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            font-family: $font-titles;
+            font-size: clamp(3rem, 15vw, 12rem); // Taille fluide (min, idéal, max)
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            display: inline;
+        }
+    }
+}
+h1, h2, h3 {
+    font-family: $font-titles;
+    color: $gold-tga;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: fit-content;
+    margin: 3vw 0;
+}
+a {
+    color: $gold-tga;
+    text-decoration: underline;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    &:hover {
+        color: lighten($gold-tga, 10%);
+    }
+}
+.about {
+    grid-column: 1 / 13; // La section occupe tout le container
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); // Elle-même divisée en 12
+    column-gap: $gap;
+    margin-top: 2rem;
+    p {
+        // --- C'EST ICI QUE L'ALIGNEMENT SE JOUE ---
+        // On fait commencer le texte à la colonne 5 pour l'aligner sous "Game"
+        grid-column: 4 / 12; 
+        font-family: $font-body;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        font-weight: 300;
+        border-left: 2px solid $gold-tga;
+        padding-left: 2rem;
+        @media (max-width: 768px) {
+            grid-column: 1 / 13; // Sur mobile, on prend toute la place
+            padding-left: 1rem;
+        }
+    }
+}
+
+.hero-main-content {
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: $gap;
+    margin-top: 2rem;
+    .main {
+        grid-column: 1 / 13;
+        h2 {
+            font-size: 3rem;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.goty {
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3rem 1rem; // Gap vertical 3rem, horizontal 1rem
+
+    &-left {
+        grid-column: 1 / 6; // Colonnes 1 à 5
+    }
+
+    &-right {
+        grid-column: 8 / 13; // Colonnes 8 à 12 (crée un vide au milieu)
+        text-align: right;
+    }
+
+    @media (max-width: 768px) {
+        &-left, &-right {
+            grid-column: 1 / 13; // Empilés sur mobile
+            text-align: left;
+        }
+    }
+}
