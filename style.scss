@@ -104,6 +104,8 @@ a {
     grid-template-columns: repeat(12, 1fr);
     column-gap: $gap;
     margin-top: 2rem;
+    position: relative; // Added for absolute positioning of line-wrapper
+    
     .main {
         grid-column: 1 / 13;
         h2 {
@@ -112,6 +114,32 @@ a {
             margin-bottom: 2rem;
         }
     }
+}
+
+#line-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.barre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.barre-segment {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: $gold-tga;
+    opacity: 0;
 }
 
 .goty {
@@ -127,6 +155,70 @@ a {
     &-right {
         grid-column: 8 / 13; // Colonnes 8 à 12 (crée un vide au milieu)
         text-align: right;
+    }
+
+    &-item {
+        position: relative;
+    }
+
+    .goty-content {
+        position: relative;
+        z-index: 20;
+        background-color: $bg-dark; // Cache le texte en dessous
+        
+        img {
+            width: 100%;
+            max-width: 500px;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin: 1rem 0;
+        }
+    }
+
+    .goty-details {
+        position: absolute;
+        top: 60px; // Légèrement sous le H3
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        text-align: left;
+        padding: 1.5rem;
+        background: rgba($bg-dark, 0.95);
+        border: 1px solid rgba($gold-tga, 0.3);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+        .goty-desc {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        h4 {
+            color: $gold-tga;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                color: #ccc;
+                font-size: 0.95rem;
+                padding-left: 15px;
+                position: relative;
+                margin-bottom: 6px;
+                
+                &::before {
+                    content: '•';
+                    color: $gold-tga;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
     }
 
     @media (max-width: 768px) {
