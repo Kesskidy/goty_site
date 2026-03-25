@@ -1,5 +1,4 @@
-import { chargerGoty, afficherGoty } from './goty.js';
-import { createBarre } from './goty_animation.js';
+import { chargerGoty, afficherGoty, createBarre } from './goty.js';
 
 const run = async () => {
     try {
