@@ -129,6 +129,15 @@ a:hover {
   opacity: 0;
 }
 
+.connector-line {
+  position: absolute;
+  left: 1px;
+  height: 2px;
+  background-color: #ffd75f;
+  transform-origin: left center;
+  z-index: -1;
+}
+
 .goty {
   grid-column: 1/13;
   display: grid;

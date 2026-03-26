@@ -128,10 +128,7 @@ function createBarre() {
 
         const segments = document.querySelectorAll('.barre-segment');
 
-        gsap.to(segments, {
-            opacity: 1,
-            x: 0,
-            stagger: 0.1,
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: firstGoty,
                 start: "top center",
@@ -140,6 +137,70 @@ function createBarre() {
                 scrub: true,
             }
         });
+
+        tl.to(segments, {
+            opacity: 1,
+            x: 0,
+            stagger: 0.1,
+            duration: 0.5
+        }, 0);
+
+        // AJOUT : Création et animation des lignes diagonales connectrices parfaitement synchronisées
+        const lineWrapperRect = lineWrapper.getBoundingClientRect();
+        const barreRect = barre.getBoundingClientRect();
+        const gotyItems = document.querySelectorAll('.goty-item');
+
+        gotyItems.forEach(item => {
+            const img = item.querySelector('.goty-img-clickable');
+            const imgRect = img.getBoundingClientRect();
+            const isLeft = item.classList.contains('goty-left');
+
+            // Cible horizontale relative (bord de l'image par rapport à line-wrapper)
+            const targetX_viewport = isLeft ? imgRect.right : imgRect.left;
+            const targetX = targetX_viewport - lineWrapperRect.left; 
+
+            // Cible verticale relative par rapport au `top` de la barre (qui commence au premier GOTY)
+            const imgTopInBarre = imgRect.top - barreRect.top;
+            const targetY = imgTopInBarre + (imgRect.height / 2);
+
+            // Souhait : partir plus haut (ex: 120px)
+            const desiredStartY = targetY - 120;
+            
+            // On calcule l'indice du segment le plus proche
+            const step = segmentHeight + gap;
+            let segmentIndex = Math.round(desiredStartY / step);
+            if (segmentIndex < 0) segmentIndex = 0;
+            if (segmentIndex >= numSegments) segmentIndex = numSegments - 1;
+
+            // Le point de départ réel : pil poil au centre de ce segment
+            const startY = (segmentIndex * step) + (segmentHeight / 2);
+
+            // Calcul géométrique de base
+            const deltaX = targetX - 1; // 1px est le bord gauche de la ligne (qui fait 2px total)
+            const deltaY = targetY - startY;
+            const distance = Math.hypot(deltaX, deltaY);
+            const angle = Math.atan2(deltaY, deltaX);
+
+            // Création de l'élément connecteur
+            const connector = document.createElement('div');
+            connector.classList.add('connector-line');
+            connector.style.top = `${startY}px`;
+            connector.style.width = `${distance}px`;
+            connector.style.transform = `rotate(${angle}rad)`;
+            
+            // On l'ajoute directement à la `barre` pour utiliser les mêmes repères verticaux que les segments
+            barre.appendChild(connector);
+
+            // On lance son l'animation *exactement* en même temps que son segment parent !
+            // L'animation des segments commence avec un stagger de 0.1s
+            const startTime = segmentIndex * 0.1;
+            tl.fromTo(connector, 
+                { scaleX: 0 }, 
+                { scaleX: 1, duration: 0.5, ease: "none" }, 
+                startTime
+            );
+        });
+
         ScrollTrigger.refresh();
     });
 }

@@ -142,6 +142,16 @@ a {
     opacity: 0;
 }
 
+.connector-line {
+    position: absolute;
+    left: 1px; // Centre de la ligne
+    height: 2px;
+    background-color: $gold-tga;
+    transform-origin: left center;
+    z-index: -1; // Derrière la ligne et les contenus
+}
+
+
 .goty {
     grid-column: 1 / 13;
     display: grid;
