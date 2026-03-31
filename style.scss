@@ -176,6 +176,19 @@ a {
         z-index: 20;
         background-color: $bg-dark; // Cache le texte en dessous
         
+        .goty-img-button {
+            border: none;
+            background: none;
+            padding: 0;
+            cursor: pointer;
+            
+            &:focus {
+                outline: 3px solid $gold-tga;
+                outline-offset: 4px;
+                box-shadow: 0 0 10px rgba($gold-tga, 0.5);
+            }
+        }
+        
         img {
             width: 100%;
             max-width: 500px;
@@ -237,4 +250,152 @@ a {
             text-align: left;
         }
     }
+}
+
+// Voting styles
+.nominees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.nominee-item {
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 5px;
+    transition: border-color 0.3s;
+
+    &:hover {
+        border-color: $gold-tga;
+    }
+
+    &.voted {
+        border-color: $gold-tga;
+        background-color: rgba($gold-tga, 0.1);
+    }
+
+    .nominee-img {
+        width: 100%;
+        max-width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    p {
+        font-size: 0.8rem;
+        margin-top: 5px;
+        color: #ccc;
+    }
+}
+
+.voting-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.nominee-radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 5px;
+    transition: border-color 0.3s;
+
+    &:hover {
+        border-color: $gold-tga;
+    }
+
+    input[type="radio"] {
+        display: none;
+
+        &:checked + .nominee-content {
+            border-color: $gold-tga;
+            background-color: rgba($gold-tga, 0.1);
+        }
+    }
+
+    .nominee-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .nominee-img {
+            width: 100%;
+            max-width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 0.8rem;
+            margin: 5px 0;
+            color: #ccc;
+        }
+    }
+}
+
+.vote-count {
+    font-size: 0.7rem;
+    color: $gold-tga;
+}
+
+.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+.active {
+    z-index: 100;
+    position: relative;
+}
+
+// Accessibility
+button:focus,
+input:focus,
+a:focus,
+.nominee-radio:focus-within {
+    outline: 2px solid $gold-tga;
+    outline-offset: 2px;
+}
+
+.goty-img-clickable:focus {
+    // Removed, now on button
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: $gold-tga;
+    color: $bg-dark;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

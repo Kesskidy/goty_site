@@ -159,6 +159,17 @@ a:hover {
   z-index: 20;
   background-color: #1d0617;
 }
+.goty .goty-content .goty-img-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+.goty .goty-content .goty-img-button:focus {
+  outline: 3px solid #ffd75f;
+  outline-offset: 4px;
+  box-shadow: 0 0 10px rgba(255, 215, 95, 0.5);
+}
 .goty .goty-content img {
   width: 100%;
   max-width: 500px;
@@ -212,6 +223,138 @@ a:hover {
     grid-column: 1/13;
     text-align: left;
   }
+}
+
+.nominees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nominee-item {
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 5px;
+  transition: border-color 0.3s;
+}
+.nominee-item:hover {
+  border-color: #ffd75f;
+}
+.nominee-item.voted {
+  border-color: #ffd75f;
+  background-color: rgba(255, 215, 95, 0.1);
+}
+.nominee-item .nominee-img {
+  width: 100%;
+  max-width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.nominee-item p {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: #ccc;
+}
+
+.voting-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nominee-radio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 5px;
+  transition: border-color 0.3s;
+}
+.nominee-radio:hover {
+  border-color: #ffd75f;
+}
+.nominee-radio input[type=radio] {
+  display: none;
+}
+.nominee-radio input[type=radio]:checked + .nominee-content {
+  border-color: #ffd75f;
+  background-color: rgba(255, 215, 95, 0.1);
+}
+.nominee-radio .nominee-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.nominee-radio .nominee-content .nominee-img {
+  width: 100%;
+  max-width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.nominee-radio .nominee-content p {
+  font-size: 0.8rem;
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.vote-count {
+  font-size: 0.7rem;
+  color: #ffd75f;
+}
+
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.active {
+  z-index: 100;
+  position: relative;
+}
+
+button:focus,
+input:focus,
+a:focus,
+.nominee-radio:focus-within {
+  outline: 2px solid #ffd75f;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #ffd75f;
+  color: #1d0617;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

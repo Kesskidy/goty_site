@@ -1,5 +1,27 @@
 const gotyTableau = [];
 
+function getVotedGame(year) {
+    const votes = JSON.parse(localStorage.getItem('gotyVotes') || '{}');
+    return votes[year];
+}
+
+function getVoteCounts(year) {
+    const counts = JSON.parse(localStorage.getItem('gotyVoteCounts') || '{}');
+    return counts[year] || {};
+}
+
+function saveVote(year, gameName) {
+    const votes = JSON.parse(localStorage.getItem('gotyVotes') || '{}');
+    votes[year] = gameName;
+    localStorage.setItem('gotyVotes', JSON.stringify(votes));
+
+    // Increment count
+    const counts = JSON.parse(localStorage.getItem('gotyVoteCounts') || '{}');
+    if (!counts[year]) counts[year] = {};
+    counts[year][gameName] = (counts[year][gameName] || 0) + 1;
+    localStorage.setItem('gotyVoteCounts', JSON.stringify(counts));
+}
+
 function afficherGoty() {
     const gotyContainer = document.querySelector('.goty');
     gotyContainer.innerHTML = '';
@@ -8,21 +30,41 @@ function afficherGoty() {
         const goty = gotyTableau[i];
         const sideClass = goty.year % 2 === 0 ? 'goty-left' : 'goty-right';
 
+        const votedGame = getVotedGame(goty.year);
+        const voteCounts = getVoteCounts(goty.year);
+        const displayGame = votedGame ? goty.nominees.find(n => n.name === votedGame) : {name: goty.name, image: goty.image};
+
         let nomineesHtml = '';
         if (goty.nominees && goty.nominees.length > 0) {
-            nomineesHtml = '<ul><li>' + goty.nominees.join('</li><li>') + '</li></ul>';
+            nomineesHtml = `<form class="voting-form" role="radiogroup" aria-labelledby="vote-heading-${goty.year}">`;
+            goty.nominees.forEach(nominee => {
+                const count = voteCounts[nominee.name] || 0;
+                const isChecked = votedGame === nominee.name ? 'checked' : '';
+            nomineesHtml += `
+                    <label class="nominee-radio" aria-describedby="vote-count-${goty.year}-${nominee.name.replace(/\s+/g, '-')}">
+                        <input type="radio" name="vote-${goty.year}" value="${nominee.name}" aria-label="Voter pour ${nominee.name}, actuellement ${count} votes" ${isChecked}>
+                        <div class="nominee-content">
+                            <img src="${nominee.image}" alt="Image du jeu ${nominee.name}" class="nominee-img">
+                            <p>${nominee.name}</p>
+                            <span id="vote-count-${goty.year}-${nominee.name.replace(/\s+/g, '-')}" class="vote-count" aria-live="polite">${count} votes</span>
+                        </div>
+                    </label>`;
+            });
+            nomineesHtml += '</form>';
         }
 
         gotyContainer.innerHTML += `
             <div class="${sideClass} goty-item">
                 <div class="goty-content">
                     <h3>${goty.year}</h3>
-                    <img src="${goty.image}" alt="${goty.name}" class="goty-img-clickable" style="cursor: pointer;">
-                    <p class="goty-title">${goty.name}</p>
+                    <button class="goty-img-button" aria-label="Cliquez pour voir les détails et voter pour ${goty.year}">
+                        <img src="${displayGame.image}" alt="${displayGame.name}" class="goty-img-clickable">
+                    </button>
+                    <p class="goty-title">${displayGame.name}</p>
                 </div>
                 <div class="goty-details" style="opacity: 0; pointer-events: none;">
                     <p class="goty-desc">${goty.description || ''}</p>
-                    ${nomineesHtml ? `<h4 style="margin-top:15px; margin-bottom: 5px;">Nominés :</h4>${nomineesHtml}` : ''}
+                    ${nomineesHtml ? `<h4 id="vote-heading-${goty.year}" style="margin-top:15px; margin-bottom: 5px;">Votez pour votre GOTY :</h4><p class="sr-only">Utilisez les boutons radio pour sélectionner votre jeu préféré parmi les nominés de ${goty.year}. Chaque bouton affiche le nom du jeu, son image et le nombre actuel de votes.</p>${nomineesHtml}` : ''}
                 </div>
             </div>`;
     }
@@ -35,13 +77,13 @@ function setupInteractivity() {
     const items = document.querySelectorAll('.goty-item');
 
     items.forEach(item => {
-        const img = item.querySelector('.goty-img-clickable');
+        const button = item.querySelector('.goty-img-button');
         const details = item.querySelector('.goty-details');
         const content = item.querySelector('.goty-content');
         
         let isOpen = false;
 
-        img.addEventListener('click', () => {
+        button.addEventListener('click', () => {
             isOpen = !isOpen;
             
             const isLeft = item.classList.contains('goty-left');
@@ -53,15 +95,43 @@ function setupInteractivity() {
             const yVal = isMobile ? (isOpen ? "150px" : 0) : 0; 
             
             if (isOpen) {
+                // Blur other items
+                items.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.add('blurred');
+                    }
+                });
+                item.classList.add('active');
+                
                 gsap.to(content, { x: xVal, y: yVal, duration: 0.6, ease: "power3.out" });
                 gsap.to(details, { opacity: 1, duration: 0.5, delay: 0.3, ease: "power2.out" });
                 details.style.pointerEvents = 'auto';
             } else {
+                // Remove blur
+                items.forEach(otherItem => {
+                    otherItem.classList.remove('blurred');
+                });
+                item.classList.remove('active');
+                
                 gsap.to(content, { x: 0, y: 0, duration: 0.6, ease: "power3.inOut" });
                 gsap.to(details, { opacity: 0, duration: 0.3, ease: "power2.in" });
                 details.style.pointerEvents = 'none';
             }
         });
+
+        // Voting functionality
+        const votingForm = item.querySelector('.voting-form');
+        if (votingForm) {
+            votingForm.addEventListener('change', (e) => {
+                if (e.target.type === 'radio') {
+                    const year = goty.year;
+                    const gameName = e.target.value;
+                    saveVote(year, gameName);
+                    // Update display
+                    afficherGoty();
+                }
+            });
+        }
     });
 }
 
