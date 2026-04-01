@@ -2,14 +2,15 @@
   {
     "name": "Clair Obscur : Expédition 33",
     "year": 2025,
-    "image": "img/23_clair_obscur.jpg",
+    "image": "img/23_Clair_Obscur.jpg",
     "description": "Un RPG fantastique mêlant combat au tour par tour réactif et visuels envoûtants, dans une quête désespérée pour empêcher la Peintresse de dessiner le nombre '33'.",
     "nominees": [
-      "Ghost of Yōtei",
-      "Grand Theft Auto VI",
-      "Death Stranding 2: On The Beach",
-      "Doom: The Dark Ages",
-      "Monster Hunter Wilds"
+      {"name": "Clair Obscur : Expédition 33", "image": "img/23_Clair_Obscur.jpg"},
+      {"name": "Ghost of Yōtei", "image": "img/23_Ghost_Of_Yotei.jpg"},
+      {"name": "Hollow Knight SlikSong", "image": "img/23_Silk_Song.jpg"},
+      {"name": "Death Stranding 2: On The Beach", "image": "img/23_Death_Stranding_2.jpg"},
+      {"name": "Doom: The Dark Ages", "image": "img/23_Doom_Dark_Ages.jpg"},
+      {"name": "Monster Hunter Wilds", "image": "img/23_Monster_Hunter_Wilds.jpg"}
     ]
   },
   {
@@ -18,11 +19,12 @@
     "image": "img/22_Astro_Bot.jpg",
     "description": "Un jeu de plateforme exceptionnellement inventif qui célèbre l'histoire de PlayStation tout en offrant un gameplay joyeux et parfaitement maîtrisé.",
     "nominees": [
-      "Balatro",
-      "Black Myth: Wukong",
-      "Elden Ring: Shadow of the Erdtree",
-      "Final Fantasy VII Rebirth",
-      "Metaphor: ReFantazio"
+      {"name": "Astro Bot", "image": "img/22_Astro_Bot.jpg"},
+      {"name": "Balatro", "image": "img/22_Balatro.jpg"},
+      {"name": "Black Myth: Wukong", "image": "img/22_Black_Myth_Wukong.jpg"},
+      {"name": "Elden Ring: Shadow of the Erdtree", "image": "img/22_Elden_Ring_Shadow.jpg"},
+      {"name": "Final Fantasy VII Rebirth", "image": "img/22_Final_Fantasy_VII_Rebirth.jpg"},
+      {"name": "Metaphor: ReFantazio", "image": "img/22_Metaphor_ReFantazio.jpg"}
     ]
   },
   {
@@ -31,11 +33,12 @@
     "image": "img/21_Baldurs_Gate_3.jpg",
     "description": "Un chef-d'œuvre du RPG où la liberté absolue du joueur se conjugue à une écriture remarquable et des combats tactiques profonds.",
     "nominees": [
-      "Alan Wake 2",
-      "The Legend of Zelda: Tears of the Kingdom",
-      "Marvel's Spider-Man 2",
-      "Resident Evil 4",
-      "Super Mario Bros. Wonder"
+      {"name": "Baldur's Gate 3", "image": "img/21_Baldurs_Gate_3.jpg"},
+      {"name": "Alan Wake 2", "image": "img/21_Alan_Wake_2.jpg"},
+      {"name": "The Legend of Zelda: Tears of the Kingdom", "image": "img/21_Zelda_Tears.jpg"},
+      {"name": "Marvel's Spider-Man 2", "image": "img/21_Marvel_Spider_Man_2.jpg"},
+      {"name": "Resident Evil 4", "image": "img/21_Resident_Evil_4.jpg"},
+      {"name": "Super Mario Bros. Wonder", "image": "img/21_Super_Mario_Bros_Wonder.jpg"}
     ]
   },
   {
@@ -44,11 +47,12 @@
     "image": "img/20_Elden_Ring.jpg",
     "description": "Une révolution du jeu en monde ouvert, fruit de la collaboration entre Hidetaka Miyazaki et G.R.R. Martin, alliant conception de niveaux magistrale et défis intraitables.",
     "nominees": [
-      "A Plague Tale: Requiem",
-      "God of War Ragnarök",
-      "Horizon Forbidden West",
-      "Stray",
-      "Xenoblade Chronicles 3"
+      {"name": "Elden Ring", "image": "img/20_Elden_Ring.jpg"},
+      {"name": "A Plague Tale: Requiem", "image": "img/20_Plague_Tale_Requiem.jpg"},
+      {"name": "God of War Ragnarök", "image": "img/20_God_Of_War_Ragnarok.jpg"},
+      {"name": "Horizon Forbidden West", "image": "img/20_Horizon_Forbidden_West.jpg"},
+      {"name": "Stray", "image": "img/20_Stray.jpg"},
+      {"name": "Xenoblade Chronicles 3", "image": "img/20_Xenoblade_Chronicles_3.jpg"}
     ]
   },
   {
@@ -57,11 +61,12 @@
     "image": "img/19_It_Takes_Two.jpg",
     "description": "Une aventure coopérative foisonnante d'idées où chaque niveau réinvente le gameplay pour illustrer la thérapie de couple de Cody et May.",
     "nominees": [
-      "Deathloop",
-      "Metroid Dread",
-      "Psychonauts 2",
-      "Ratchet & Clank: Rift Apart",
-      "Resident Evil Village"
+      {"name": "It Takes Two", "image": "img/19_It_Takes_Two.jpg"},
+      {"name": "Deathloop", "image": "img/19_Deathloop.jpg"},
+      {"name": "Metroid Dread", "image": "img/19_Metroid_Dread.jpg"},
+      {"name": "Psychonauts 2", "image": "img/19_Psychonauts_2.jpg"},
+      {"name": "Ratchet & Clank: Rift Apart", "image": "img/19_Ratchet_Clank_Rift_Apart.jpg"},
+      {"name": "Resident Evil Village", "image": "img/19_Resident_Evil_Village.jpg"}
     ]
   },
   {
@@ -70,11 +75,12 @@
     "image": "img/18_The_Last_of_Us_Part_II.jpg",
     "description": "Une expérience narrative brute et émotionnellement dévastatrice explorant le cycle de la violence avec une réalisation visuelle et technique sans précédent.",
     "nominees": [
-      "Animal Crossing: New Horizons",
-      "Doom Eternal",
-      "Final Fantasy VII Remake",
-      "Ghost of Tsushima",
-      "Hades"
+      {"name": "The Last of Us Part II", "image": "img/18_The_Last_of_Us_Part_II.jpg"},
+      {"name": "Animal Crossing: New Horizons", "image": "img/18_Animal_Crossing_New_Horizons.jpg"},
+      {"name": "Doom Eternal", "image": "img/18_Doom_Eternal.jpg"},
+      {"name": "Final Fantasy VII Remake", "image": "img/18_Final_Fantasy_VII_Remake.jpg"},
+      {"name": "Ghost of Tsushima", "image": "img/18_Ghost_of_Tsushima.jpg"},
+      {"name": "Hades", "image": "img/18_Hades.jpg"}
     ]
   },
   {
@@ -83,11 +89,12 @@
     "image": "img/17_Sekiro_Shadows_Die_Twice.jpg",
     "description": "Un jeu d'action exigeant centré sur la précision chirurgicale, la parade et l'infiltration dans un Japon Sengoku imprégné de mythes.",
     "nominees": [
-      "Control",
-      "Death Stranding",
-      "Resident Evil 2",
-      "Super Smash Bros. Ultimate",
-      "The Outer Worlds"
+      {"name": "Sekiro: Shadows Die Twice", "image": "img/17_Sekiro_Shadows_Die_Twice.jpg"},
+      {"name": "Control", "image": "img/17_Control.jpg"},
+      {"name": "Death Stranding", "image": "img/17_Death_Stranding.jpg"},
+      {"name": "Resident Evil 2", "image": "img/17_Resident_Evil_2.jpg"},
+      {"name": "Super Smash Bros. Ultimate", "image": "img/17_Super_Smash_Bros_Ultimate.jpg"},
+      {"name": "The Outer Worlds", "image": "img/17_The_Outer_Worlds.jpg"}
     ]
   },
   {
@@ -96,11 +103,12 @@
     "image": "img/16_God_of_War.jpg",
     "description": "Une réinvention magistrale de la saga mythologique, offrant un système de combat viscéral et une relation père-fils poignante filmée en un plan-séquence ininterrompu.",
     "nominees": [
-      "Assassin's Creed Odyssey",
-      "Celeste",
-      "Marvel's Spider-Man",
-      "Monster Hunter: World",
-      "Red Dead Redemption 2"
+      {"name": "God of War", "image": "img/16_God_of_War.jpg"},
+      {"name": "Assassin's Creed Odyssey", "image": "img/16_Assassin's_Creed_Odyssey.jpg"},
+      {"name": "Celeste", "image": "img/16_Celeste.jpg"},
+      {"name": "Marvel's Spider-Man", "image": "img/16_Marvel's_Spider-Man.jpg"},
+      {"name": "Monster Hunter: World", "image": "img/16_Monster_Hunter_World.jpg"},
+      {"name": "Red Dead Redemption 2", "image": "img/16_Red_Dead_Redemption_2.jpg"}
     ]
   },
   {
@@ -109,10 +117,11 @@
     "image": "img/15_The_Legend_of_Zelda_BOTW.jpg",
     "description": "Une redéfinition historique de l'exploration et de l'aventure, offrant un monde bac à sable basé sur des règles physiques émergentes.",
     "nominees": [
-      "Horizon Zero Dawn",
-      "Persona 5",
-      "PlayerUnknown's Battlegrounds",
-      "Super Mario Odyssey"
+      {"name": "The Legend of Zelda: Breath of the Wild", "image": "img/15_The_Legend_of_Zelda_BOTW.jpg"},
+      {"name": "Horizon Zero Dawn", "image": "img/15_Horizon_Zero_Dawn.jpg"},
+      {"name": "Persona 5", "image": "img/15_Persona_5.jpg"},
+      {"name": "PlayerUnknown's Battlegrounds", "image": "img/15_PlayerUnknown's_Battlegrounds.jpg"},
+      {"name": "Super Mario Odyssey", "image": "img/15_Super_Mario_Odyssey.jpg"}
     ]
   },
   {
@@ -121,10 +130,11 @@
     "image": "img/14_Overwatch.jpg",
     "description": "Un hero-shooter vibrant et compétitif qui a défini les standards de l'e-sport avec son casting de personnages charismatiques et son gameplay centré sur l'équipe.",
     "nominees": [
-      "Doom",
-      "Inside",
-      "Titanfall 2",
-      "Uncharted 4: A Thief's End"
+      {"name": "Overwatch", "image": "img/14_Overwatch.jpg"},
+      {"name": "Doom", "image": "img/14_Doom.jpg"},
+      {"name": "Inside", "image": "img/14_Inside.jpg"},
+      {"name": "Titanfall 2", "image": "img/14_Titanfall_2.jpg"},
+      {"name": "Uncharted 4: A Thief's End", "image": "img/14_Uncharted_4.jpg"}
     ]
   },
   {
@@ -133,10 +143,11 @@
     "image": "img/13_The_Witcher_3.jpg",
     "description": "L'un des plus grands RPG scénarisés de l'histoire, rempli de quêtes aux dilemmes moraux complexes dans un monde massif et magnifiquement sombre.",
     "nominees": [
-      "Bloodborne",
-      "Fallout 4",
-      "Super Mario Maker",
-      "Metal Gear Solid V: The Phantom Pain"
+      {"name": "The Witcher 3: Wild Hunt", "image": "img/13_The_Witcher_3.jpg"},
+      {"name": "Bloodborne", "image": "img/13_Bloodborne.jpg"},
+      {"name": "Fallout 4", "image": "img/13_Fallout_4.jpg"},
+      {"name": "Super Mario Maker", "image": "img/13_Super_Mario_Maker.jpg"},
+      {"name": "Metal Gear Solid V: The Phantom Pain", "image": "img/13_Metal_Gear_Solid_V.jpg"}
     ]
   },
   {
@@ -145,10 +156,11 @@
     "image": "img/12_Dragon_Age_Inquisition.jpg",
     "description": "Un RPG politique épique centré sur la fermeture de failles démoniaques avec une gestion tactique poussée de son équipe de héros.",
     "nominees": [
-      "Bayonetta 2",
-      "Dark Souls II",
-      "Hearthstone",
-      "Middle-earth: Shadow of Mordor"
+      {"name": "Dragon Age: Inquisition", "image": "img/12_Dragon_Age_Inquisition.jpg"},
+      {"name": "Bayonetta 2", "image": "img/12_Bayonetta_2.jpg"},
+      {"name": "Dark Souls II", "image": "img/12_Dark_Souls_2.jpg"},
+      {"name": "Hearthstone", "image": "img/12_Hearthstone.jpg"},
+      {"name": "Middle-earth: Shadow of Mordor", "image": "img/12_Shadow_of_Mordor.jpg"}
     ]
   },
   {
@@ -157,10 +169,11 @@
     "image": "img/11_Grand_theft_auto_V.jpg",
     "description": "Une satire monumentale de la culture américaine vue à travers la vie entremêlée de trois criminels évoluant dans l'immense monde de Los Santos.",
     "nominees": [
-      "BioShock Infinite",
-      "Super Mario 3D World",
-      "The Last of Us",
-      "Tomb Raider"
+      {"name": "Grand Theft Auto V", "image": "img/11_Grand_theft_auto_V.jpg"},
+      {"name": "BioShock Infinite", "image": "img/11_BioShock_Infinite.jpg"},
+      {"name": "Super Mario 3D World", "image": "img/11_Super_Mario_3D_World.jpg"},
+      {"name": "The Last of Us", "image": "img/11_The_Last_of_Us.jpg"},
+      {"name": "Tomb Raider", "image": "img/11_Tomb_Raider.jpg"}
     ]
   },
   {
@@ -169,10 +182,11 @@
     "image": "img/10_The_Walking_Dead.jpg",
     "description": "Un chef-d'œuvre de la narration en jeu vidéo, forçant les joueurs à faire des choix déchirants dans un monde post-apocalyptique aux côtés de Lee et Clementine.",
     "nominees": [
-      "Assassin's Creed III",
-      "Dishonored",
-      "Journey",
-      "Mass Effect 3"
+      {"name": "The Walking Dead", "image": "img/10_The_Walking_Dead.jpg"},
+      {"name": "Assassin's Creed III", "image": "img/10_Assassin's_Creed_III.jpg"},
+      {"name": "Dishonored", "image": "img/10_Dishonored.jpg"},
+      {"name": "Journey", "image": "img/10_Journey.jpg"},
+      {"name": "Mass Effect 3", "image": "img/10_Mass_Effect_3.jpg"}
     ]
   },
   {
@@ -181,10 +195,11 @@
     "image": "img/9_The_Elder_Scrolls_V.jpg",
     "description": "Le RPG fantastique par excellence offrant une immersion inégalée, la liberté de devenir ce que l'on veut et bien sûr... des dragons.",
     "nominees": [
-      "Batman: Arkham City",
-      "The Legend of Zelda: Skyward Sword",
-      "Portal 2",
-      "Uncharted 3: Drake's Deception"
+      {"name": "The Elder Scrolls V: Skyrim", "image": "img/9_The_Elder_Scrolls_V.jpg"},
+      {"name": "Batman: Arkham City", "image": "img/9_Batman_Arkham_City.jpg"},
+      {"name": "The Legend of Zelda: Skyward Sword", "image": "img/9_Zelda_Skyward_Sword.jpg"},
+      {"name": "Portal 2", "image": "img/9_portal_2.jpg"},
+      {"name": "Uncharted 3: Drake's Deception", "image": "img/9_uncharted_3.jpg"}
     ]
   },
   {
@@ -193,10 +208,11 @@
     "image": "img/8_Red_Dead_Redemption.jpg",
     "description": "Le rêve de tout fan de western, incarnant le hors-la-loi repenti John Marston chassant d'anciens membres de son gang dans un monde sauvage magnifique.",
     "nominees": [
-      "Call of Duty: Black Ops",
-      "God of War III",
-      "Halo: Reach",
-      "Mass Effect 2"
+      {"name": "Red Dead Redemption", "image": "img/8_Red_Dead_Redemption.jpg"},
+      {"name": "Call of Duty: Black Ops", "image": "img/8_cod_black_ops.jpg"},
+      {"name": "God of War III", "image": "img/8_god_of_war_3.jpg"},
+      {"name": "Halo: Reach", "image": "img/8_halo_reach.jpg"},
+      {"name": "Mass Effect 2", "image": "img/8_mass_effect_2.jpg"}
     ]
   },
   {
@@ -205,10 +221,11 @@
     "image": "img/7_uncharted_2.jpg",
     "description": "Une aventure action-cinématographique révolutionnaire avec des séquences explosives, d'excellents dialogues et l'apogée des périples de Nathan Drake.",
     "nominees": [
-      "Assassin's Creed II",
-      "Batman: Arkham Asylum",
-      "Call of Duty: Modern Warfare 2",
-      "Left 4 Dead 2"
+      {"name": "Uncharted 2: Among Thieves", "image": "img/7_uncharted_2.jpg"},
+      {"name": "Assassin's Creed II", "image": "img/7_assassins_creed_2.jpg"},
+      {"name": "Batman: Arkham Asylum", "image": "img/7_batman_arkham_asylum.jpg"},
+      {"name": "Call of Duty: Modern Warfare 2", "image": "img/7_cod_modern_warfare_2.jpg"},
+      {"name": "Left 4 Dead 2", "image": "img/7_left_4_dead_2.jpg"}
     ]
   },
   {
@@ -217,10 +234,11 @@
     "image": "img/6_Grand_theft_auto_IV.jpg",
     "description": "Un tournant dramatique pour la série GTA avec une représentation réaliste de la poursuite cynique du rêve américain par Niko Bellic à Liberty City.",
     "nominees": [
-      "Fallout 3",
-      "Gears of War 2",
-      "LittleBigPlanet",
-      "Metal Gear Solid 4: Guns of the Patriots"
+      {"name": "Grand Theft Auto IV", "image": "img/6_Grand_theft_auto_IV.jpg"},
+      {"name": "Fallout 3", "image": "img/6_fallout_3.jpg"},
+      {"name": "Gears of War 2", "image": "img/6_gears_of_war_2.jpg"},
+      {"name": "LittleBigPlanet", "image": "img/6_littlebigplanet.jpg"},
+      {"name": "Metal Gear Solid 4: Guns of the Patriots", "image": "img/6_mgs4.jpg"}
     ]
   },
   {
@@ -229,10 +247,11 @@
     "image": "img/5_BioShock.jpg",
     "description": "Une plongée horrifique et philosophique dans Rapture, une utopie sous-marine post-effondrement offrant des tirs viscéraux et des pouvoirs fantastiques.",
     "nominees": [
-      "Call of Duty 4: Modern Warfare",
-      "Halo 3",
-      "Mass Effect",
-      "Super Mario Galaxy"
+      {"name": "BioShock", "image": "img/5_BioShock.jpg"},
+      {"name": "Call of Duty 4: Modern Warfare", "image": "img/5_cod4_modern_warfare.jpg"},
+      {"name": "Halo 3", "image": "img/5_halo_3.jpg"},
+      {"name": "Mass Effect", "image": "img/5_mass_effect.jpg"},
+      {"name": "Super Mario Galaxy", "image": "img/5_super_mario_galaxy.jpg"}
     ]
   },
   {
@@ -241,10 +260,11 @@
     "image": "img/4_The_Elder_Scrolls_IV.jpg",
     "description": "Une épopée révolutionnaire qui a popularisé le monde ouvert sur console, avec des PNJ vivants et la sombre menace temporelle de Mehrunes Dagon.",
     "nominees": [
-      "Gears of War",
-      "Guitar Hero II",
-      "The Legend of Zelda: Twilight Princess",
-      "Ōkami"
+      {"name": "The Elder Scrolls IV: Oblivion", "image": "img/4_The_Elder_Scrolls_IV.jpg"},
+      {"name": "Gears of War", "image": "img/4_gears_of_war.jpg"},
+      {"name": "Guitar Hero II", "image": "img/4_guitar_hero_2.jpg"},
+      {"name": "The Legend of Zelda: Twilight Princess", "image": "img/4_zelda_twilight_princess.jpg"},
+      {"name": "Ōkami", "image": "img/4_okami.jpg"}
     ]
   },
   {
@@ -253,10 +273,11 @@
     "image": "img/3_Resident_Evil_4.jpeg",
     "description": "L'évolution ultime du survival-horror modernisant l'action en vue à l'épaule dans une mission tendue pour sauver la fille du président au fond de l'Espagne.",
     "nominees": [
-      "God of War",
-      "Civilization IV",
-      "Shadow of the Colossus",
-      "Splinter Cell: Chaos Theory"
+      {"name": "Resident Evil 4", "image": "img/3_Resident_Evil_4.jpeg"},
+      {"name": "God of War", "image": "img/3_god_of_war.jpg"},
+      {"name": "Civilization IV", "image": "img/3_civilization_4.jpg"},
+      {"name": "Shadow of the Colossus", "image": "img/3_shadow_of_the_colossu.jpg"},
+      {"name": "Splinter Cell: Chaos Theory", "image": "img/3_splinter_cell_chaos.jpg"}
     ]
   },
   {
@@ -265,10 +286,11 @@
     "image": "img/2_GTA_SanAndreas.jpg",
     "description": "L'un des mondes ouverts les plus marquants de sa génération, retraçant l'ascension de CJ à travers un État fictif parsemé d'icônes culturelles des années 90.",
     "nominees": [
-      "Half-Life 2",
-      "Halo 2",
-      "Metal Gear Solid 3: Snake Eater",
-      "World of Warcraft"
+      {"name": "Grand Theft Auto: San Andreas", "image": "img/2_GTA_SanAndreas.jpg"},
+      {"name": "Half-Life 2", "image": "img/2_half_life_2.jpg"},
+      {"name": "Halo 2", "image": "img/2_halo_2.jpg"},
+      {"name": "Metal Gear Solid 3: Snake Eater", "image": "img/2_mgs3_snake_eater.jpg"},
+      {"name": "World of Warcraft", "image": "img/2_world_of_warcraft.jpg"}
     ]
   },
   {
@@ -277,10 +299,11 @@
     "image": "img/1_Madden_NFL_2004.jpg",
     "description": "Une édition marquante d'un monument de la simulation de football américain qui a fait exploser les chiffres de vente de la console grâce au mode Franchise et à Michael Vick.",
     "nominees": [
-      "Star Wars: Knights of the Old Republic",
-      "The Legend of Zelda: The Wind Waker",
-      "Tom Clancy's Splinter Cell",
-      "Tony Hawk's Underground"
+      {"name": "Madden NFL 2004", "image": "img/1_Madden_NFL_2004.jpg"},
+      {"name": "Star Wars: Knights of the Old Republic", "image": "img/1_kotor.jpg"},
+      {"name": "The Legend of Zelda: The Wind Waker", "image": "img/1_zelda_wind_waker.jpg"},
+      {"name": "Tom Clancy's Splinter Cell", "image": "img/1_splinter_cell.jpg"},
+      {"name": "Tony Hawk's Underground", "image": "img/1_tony_hawk_underground.jpg"}
     ]
   }
 ]
