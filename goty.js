@@ -292,7 +292,7 @@ function createBarre() {
 
         const segmentHeight = window.innerWidth <= 1024 ? 20 : 30;
         const gap = 10;
-        const numSegments = Math.floor(totalHeight / (segmentHeight + gap)) - 10;
+        const numSegments = Math.floor(totalHeight / (segmentHeight + gap)) - 11;
 
         for (let i = 0; i < numSegments; i++) {
             const segment = document.createElement('div');
