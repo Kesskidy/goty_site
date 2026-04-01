@@ -103,6 +103,7 @@ function afficherGoty() {
 function setupInteractivity() {
     const gsap = window.gsap;
     const items = document.querySelectorAll('.goty-item');
+    let currentOpenItem = null;
 
     items.forEach(item => {
         const button = item.querySelector('.goty-img-button');
@@ -114,13 +115,18 @@ function setupInteractivity() {
         button.addEventListener('click', () => {
             isOpen = !isOpen;
             
-            const isLeft = item.classList.contains('goty-left');
             const isMobile = window.innerWidth <= 768;
-            const xVal = isMobile ? 0 : (isLeft ? "110%" : "-110%");
-            const yVal = isMobile ? (isOpen ? "150px" : 0) : 0; 
+            const isLeft = item.classList.contains('goty-left');
             
             if (isOpen) {
-                // Blur other items
+                // Close any previously open item
+                if (currentOpenItem && currentOpenItem !== item) {
+                    const prevButton = currentOpenItem.querySelector('.goty-img-button');
+                    prevButton.click();
+                }
+                currentOpenItem = item;
+
+                // Blur other items (except on mobile)
                 items.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.add('blurred');
@@ -128,8 +134,19 @@ function setupInteractivity() {
                 });
                 item.classList.add('active');
                 
-                gsap.to(content, { x: xVal, y: yVal, duration: 0.6, ease: "power3.out" });
-                gsap.to(details, { opacity: 1, duration: 0.5, delay: 0.3, ease: "power2.out" });
+                if (isMobile) {
+                    // Mobile: modal behavior with fixed positioning
+                    gsap.to(details, { 
+                        opacity: 1, 
+                        duration: 0.4, 
+                        ease: "power2.out" 
+                    });
+                } else {
+                    // Desktop: slide animation
+                    const xVal = isLeft ? "110%" : "-110%";
+                    gsap.to(content, { x: xVal, duration: 0.6, ease: "power3.out" });
+                    gsap.to(details, { opacity: 1, duration: 0.5, delay: 0.3, ease: "power2.out" });
+                }
                 details.style.pointerEvents = 'auto';
             } else {
                 // Remove blur
@@ -137,11 +154,34 @@ function setupInteractivity() {
                     otherItem.classList.remove('blurred');
                 });
                 item.classList.remove('active');
+                currentOpenItem = null;
                 
-                gsap.to(content, { x: 0, y: 0, duration: 0.6, ease: "power3.inOut" });
-                gsap.to(details, { opacity: 0, duration: 0.3, ease: "power2.in" });
+                if (isMobile) {
+                    // Mobile: fade out
+                    gsap.to(details, { 
+                        opacity: 0, 
+                        duration: 0.3, 
+                        ease: "power2.in" 
+                    });
+                } else {
+                    // Desktop: slide back
+                    gsap.to(content, { x: 0, duration: 0.6, ease: "power3.inOut" });
+                    gsap.to(details, { opacity: 0, duration: 0.3, ease: "power2.in" });
+                }
                 details.style.pointerEvents = 'none';
             }
+        });
+
+        // Close when clicking outside (on any element that's blurred or on backdrop)
+        document.addEventListener('click', (e) => {
+            if (isOpen && !item.contains(e.target) && e.target !== button) {
+                button.click();
+            }
+        });
+
+        // Prevent closing when clicking inside the details panel
+        details.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
 
         const votingForm = item.querySelector('.voting-form');
@@ -151,11 +191,51 @@ function setupInteractivity() {
                     const year = Number(item.dataset.year);
                     const gameName = e.target.value;
                     saveVote(year, gameName);
-                    afficherGoty();
+                    
+                    // Update vote counts only in the current item without closing or rebuilding everything
+                    updateItemVotes(item, year);
                 }
             });
         }
     });
+}
+
+function updateItemVotes(item, year) {
+    const voteCounts = getVoteCounts(year);
+    const voteCountElements = item.querySelectorAll('.vote-count');
+    
+    voteCountElements.forEach(el => {
+        const id = el.id; // Format: vote-count-{year}-{game-name}
+        const gameName = id.replace(`vote-count-${year}-`, '').replace(/-/g, ' ');
+        const count = voteCounts[gameName] || 0;
+        el.textContent = `${count} votes`;
+        el.setAttribute('aria-live', 'polite');
+    });
+
+    // Update the main image display if this was the only voted game
+    const votedGame = getVotedGame(year);
+    const goty = gotyTableau.find(g => g.year === year);
+    if (goty && votedGame) {
+        const displayGame = goty.nominees.find(n => n.name === votedGame);
+        if (displayGame) {
+            const img = item.querySelector('.goty-img-clickable');
+            const title = item.querySelector('.goty-title');
+            const badge = item.querySelector('.goty-badge');
+            
+            img.src = displayGame.image;
+            img.alt = displayGame.name;
+            title.textContent = displayGame.name;
+            
+            // Add badge if not already present
+            if (!badge && votedGame) {
+                const badgeEl = document.createElement('span');
+                badgeEl.classList.add('goty-badge');
+                badgeEl.textContent = 'GOTY selon vous';
+                const h3 = item.querySelector('.goty-content h3');
+                h3.parentNode.insertBefore(badgeEl, h3.nextSibling);
+            }
+        }
+    }
 }
 
 function chargerGoty() {
@@ -177,6 +257,11 @@ function createBarre() {
 
     const gotyContainer = document.querySelector('.goty');
     const images = Array.from(gotyContainer.querySelectorAll('img'));
+    
+    // Skip line animation on mobile
+    if (window.innerWidth <= 768) {
+        return;
+    }
 
     Promise.all(images.map(img => {
         if (img.complete) return Promise.resolve();
@@ -205,7 +290,7 @@ function createBarre() {
         barre.style.top = `${startY}px`;
         barre.style.height = `${totalHeight}px`;
 
-        const segmentHeight = 30;
+        const segmentHeight = window.innerWidth <= 1024 ? 20 : 30;
         const gap = 10;
         const numSegments = Math.floor(totalHeight / (segmentHeight + gap)) - 10;
 
@@ -238,7 +323,7 @@ function createBarre() {
             duration: 0.5
         }, 0);
 
-        // AJOUT : Création et animation des lignes diagonales de liaison parfaitement synchronisées
+        // Création et animation des lignes diagonales de liaison parfaitement synchronisées
         const lineWrapperRect = lineWrapper.getBoundingClientRect();
         const barreRect = barre.getBoundingClientRect();
         const gotyItems = document.querySelectorAll('.goty-item');

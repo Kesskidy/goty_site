@@ -13,6 +13,11 @@ $max-width-site: 1400px;
 $columns: 12;
 $gap: 20px;
 
+// --- BREAKPOINTS ---
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
 // --- RESET & BASE ---
 * {
     margin: 0;
@@ -23,20 +28,42 @@ $gap: 20px;
 body {
     background-color: $bg-dark;
     color: $gold-tga;
-    margin: 30px auto;
-    width: 90%;
+    margin: 20px auto;
+    width: 95%;
     max-width: $max-width-site;
     // Le container principal en Grid
     display: grid;
     grid-template-columns: repeat($columns, 1fr);
     column-gap: $gap;
+
+    @media (max-width: $tablet) {
+        margin: 15px auto;
+        width: 98%;
+        column-gap: 12px;
+    }
+
+    @media (max-width: $mobile) {
+        margin: 10px auto;
+        width: 100%;
+        padding: 0 10px;
+        column-gap: 10px;
+    }
 }
 
 // --- COMPONENTS ---
 
 header {
     grid-column: 1 / 13; // Prend toute la largeur
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    
+    @media (max-width: $tablet) {
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: $mobile) {
+        margin-bottom: 0.75rem;
+    }
+
     nav {
         display: block; // On garde le float ici pour l'effet d'imbrication (lettrine)
         .logo-lettrine {
@@ -47,7 +74,21 @@ header {
             shape-outside: margin-box; 
             margin-right: 2rem; 
             margin-bottom: 0.5rem;
+
+            @media (max-width: $tablet) {
+                width: 12%;
+                max-width: 100px;
+                margin-right: 1rem;
+            }
+
+            @media (max-width: $mobile) {
+                float: none;
+                display: block;
+                width: 60px;
+                margin: 0 0 1rem 0;
+            }
         }
+        
         h1 {
             font-family: $font-titles;
             font-size: clamp(3rem, 15vw, 12rem); // Taille fluide (min, idéal, max)
@@ -56,9 +97,19 @@ header {
             letter-spacing: -0.03em;
             text-transform: uppercase;
             display: inline;
+
+            @media (max-width: $tablet) {
+                font-size: clamp(2rem, 10vw, 6rem);
+            }
+
+            @media (max-width: $mobile) {
+                font-size: clamp(1.5rem, 8vw, 3rem);
+                display: block;
+            }
         }
     }
 }
+
 h1, h2 {
     font-family: $font-titles;
     color: $gold-tga;
@@ -66,7 +117,16 @@ h1, h2 {
     text-transform: uppercase;
     height: fit-content;
     margin: 3vw 0;
+
+    @media (max-width: $tablet) {
+        margin: 2vw 0;
+    }
+
+    @media (max-width: $mobile) {
+        margin: 1.5rem 0;
+    }
 }
+
 h3 {
     font-family: $font-titles;
     color: $gold-tga;
@@ -75,7 +135,18 @@ h3 {
     height: fit-content;
     margin: 1vw 0;
     font-size: 2.5rem;
+
+    @media (max-width: $tablet) {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 1.4rem;
+        margin: 0.75rem 0;
+    }
 }
+
 h4 {
     font-family: $font-titles;
     color: $gold-tga;
@@ -84,6 +155,14 @@ h4 {
     height: fit-content;
     margin: 0;
     font-size: 1.1rem;
+
+    @media (max-width: $tablet) {
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 0.85rem;
+    }
 }
 a {
     color: $gold-tga;
@@ -94,12 +173,24 @@ a {
         color: lighten($gold-tga, 10%);
     }
 }
+
 .about {
     grid-column: 1 / 13; // La section occupe tout le container
     display: grid;
     grid-template-columns: repeat(12, 1fr); // Elle-même divisée en 12
     column-gap: $gap;
     margin-top: 2rem;
+
+    @media (max-width: $tablet) {
+        margin-top: 1.5rem;
+        column-gap: 12px;
+    }
+
+    @media (max-width: $mobile) {
+        margin-top: 1rem;
+        column-gap: 10px;
+    }
+
     p {
         // --- C'EST ICI QUE L'ALIGNEMENT SE JOUE ---
         // On fait commencer le texte à la colonne 5 pour l'aligner sous "Game"
@@ -110,9 +201,18 @@ a {
         font-weight: 300;
         border-left: 2px solid $gold-tga;
         padding-left: 2rem;
-        @media (max-width: 768px) {
+
+        @media (max-width: $tablet) {
+            grid-column: 1 / 13; // Sur tablette, on prend toute la place
+            font-size: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        @media (max-width: $mobile) {
             grid-column: 1 / 13; // Sur mobile, on prend toute la place
+            font-size: 0.9rem;
             padding-left: 1rem;
+            line-height: 1.6;
         }
     }
 }
@@ -124,6 +224,16 @@ a {
     column-gap: $gap;
     margin-top: 2rem;
     position: relative; // Added for absolute positioning of line-wrapper
+
+    @media (max-width: $tablet) {
+        margin-top: 1.5rem;
+        column-gap: 12px;
+    }
+
+    @media (max-width: $mobile) {
+        margin-top: 1rem;
+        column-gap: 10px;
+    }
     
     .main {
         grid-column: 1 / 13;
@@ -131,6 +241,18 @@ a {
             font-size: 3rem;
             padding-bottom: 1rem;
             margin-bottom: 2rem;
+
+            @media (max-width: $tablet) {
+                font-size: 2rem;
+                padding-bottom: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            @media (max-width: $mobile) {
+                font-size: 1.5rem;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1rem;
+            }
         }
     }
 }
@@ -144,6 +266,15 @@ a {
     height: 100%;
     pointer-events: none;
     z-index: 10;
+
+    @media (max-width: $tablet) {
+        left: 5%;
+        transform: translateX(0);
+    }
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .barre {
@@ -152,6 +283,7 @@ a {
     left: 0;
     width: 100%;
 }
+
 .barre-segment {
     position: absolute;
     left: 0;
@@ -167,6 +299,10 @@ a {
     background-color: $gold-tga;
     transform-origin: left center;
     z-index: -1; // Derrière la ligne et les contenus
+
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .goty {
@@ -175,13 +311,39 @@ a {
     grid-template-columns: repeat(12, 1fr);
     gap: 3rem 1rem; // Gap vertical 3rem, horizontal 1rem
 
+    @media (max-width: $tablet) {
+        gap: 2rem 0.75rem;
+    }
+
+    @media (max-width: $mobile) {
+        gap: 1.5rem 0;
+    }
+
     &-left {
         grid-column: 1 / 6; // Colonnes 1 à 5
+
+        @media (max-width: $tablet) {
+            grid-column: 1 / 7; // Sur tablette, moitié gauche
+        }
+
+        @media (max-width: $mobile) {
+            grid-column: 1 / 13; // Sur mobile, pleine largeur
+            text-align: left;
+        }
     }
 
     &-right {
-        grid-column: 8 / 13;
+        grid-column: 8 / 13; // Colonnes 8 à 12
         text-align: right;
+
+        @media (max-width: $tablet) {
+            grid-column: 7 / 13; // Sur tablette, moitié droite
+        }
+
+        @media (max-width: $mobile) {
+            grid-column: 1 / 13; // Sur mobile, pleine largeur
+            text-align: left;
+        }
     }
 
     &-item {
@@ -213,8 +375,11 @@ a {
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
 
+            @media (max-width: $mobile) {
+                max-width: 100%;
+            }
+        }
     }
 
     &-title {
@@ -222,6 +387,11 @@ a {
         font-size: 1rem;
         line-height: 1.6;
         margin: 5px 10px;
+
+        @media (max-width: $mobile) {
+            font-size: 0.9rem;
+            margin: 5px 5px;
+        }
     }
     
     p {
@@ -229,6 +399,23 @@ a {
         font-size: 1rem;
         line-height: 1.6;
         margin: 5px 10px;
+
+        @media (max-width: $mobile) {
+            font-size: 0.9rem;
+            margin: 5px 5px;
+        }
+    }
+
+    &-badge {
+        display: inline-block;
+        background: rgba($gold-tga, 0.2);
+        color: $gold-tga;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin: 5px 10px 5px 0;
+        text-transform: uppercase;
     }
 
     &-details {
@@ -243,6 +430,25 @@ a {
         border: 2px solid rgba($gold-tga, 0.4);
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+        @media (max-width: $tablet) {
+            top: 50px;
+            padding: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: $mobile) {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;
+            max-width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
         h4 {
             margin-top: 15px;
             margin-bottom: 5px;
@@ -254,6 +460,10 @@ a {
         font-family: $font-body;
         font-size: 1rem;
         line-height: 1.6;
+
+        @media (max-width: $mobile) {
+            font-size: 0.9rem;
+        }
     }
 
     &-details-text {
@@ -261,6 +471,11 @@ a {
         font-size: 0.8rem;
         line-height: 1.6;
         margin: 5px 10px;
+
+        @media (max-width: $mobile) {
+            font-size: 0.75rem;
+            margin: 5px 5px;
+        }
     }
 
     &-vote-item {
@@ -269,6 +484,11 @@ a {
         line-height: 1.6;
         margin: 5px 10px;
         color: $gold-tga;
+
+        @media (max-width: $mobile) {
+            font-size: 0.65rem;
+            margin: 5px 5px;
+        }
     }
 
     &-voting-list {
@@ -282,6 +502,11 @@ a {
             padding-left: 15px;
             position: relative;
             margin-bottom: 6px;
+
+            @media (max-width: $mobile) {
+                font-size: 0.85rem;
+                margin-bottom: 4px;
+            }
             
             &::before {
                 content: '•';
@@ -289,13 +514,6 @@ a {
                 position: absolute;
                 left: 0;
             }
-        }
-    }
-
-    @media (max-width: 768px) {
-        &-left, &-right {
-            grid-column: 1 / 13; // Empilés sur mobile
-            text-align: left;
         }
     }
 }
@@ -306,6 +524,18 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
     margin-top: 10px;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 6px;
+        margin-top: 6px;
+    }
 }
 
 .nominee-item {
@@ -331,6 +561,10 @@ a {
         aspect-ratio: 16/9;
         object-fit: cover;
         border-radius: 5px;
+
+        @media (max-width: $mobile) {
+            max-width: 100%;
+        }
     }
 }
 
@@ -339,6 +573,11 @@ a {
     font-size: 0.8rem;
     margin-top: 5px;
     color: #ccc;
+
+    @media (max-width: $mobile) {
+        font-size: 0.7rem;
+        margin-top: 3px;
+    }
 }
 
 .voting-form {
@@ -346,6 +585,18 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
     margin-top: 10px;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 6px;
+        margin-top: 6px;
+    }
 }
 
 .nominee-radio {
@@ -381,12 +632,18 @@ a {
         height: 100%;
         border-radius: 5px;
         overflow: hidden;
+        border: 2px solid transparent;
+        transition: all 0.3s;
 
         .nominee-img {
             width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
             border-radius: 5px;
+
+            @media (max-width: $mobile) {
+                max-width: 100%;
+            }
         }
     }
 
@@ -395,6 +652,11 @@ a {
         font-size: 0.8rem;
         margin: 5px 0;
         color: #ccc;
+
+        @media (max-width: $mobile) {
+            font-size: 0.7rem;
+            margin: 3px 0;
+        }
     }
 }
 
@@ -403,6 +665,10 @@ a {
     font-size: 0.7rem;
     color: $gold-tga;
     display: block;
+
+    @media (max-width: $mobile) {
+        font-size: 0.65rem;
+    }
 }
 
 .blurred {
@@ -413,6 +679,21 @@ a {
 .active {
     z-index: 100;
     position: relative;
+}
+
+// Mobile modal overlay
+@media (max-width: $mobile) {
+    .blurred::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 99;
+        pointer-events: auto;
+    }
 }
 
 // Accessibility
@@ -434,6 +715,12 @@ a:focus,
     text-decoration: none;
     z-index: 1000;
     border-radius: 4px;
+    font-size: 0.95rem;
+
+    @media (max-width: $mobile) {
+        padding: 6px 8px;
+        font-size: 0.85rem;
+    }
 }
 
 .skip-link:focus {
