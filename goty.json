@@ -2,15 +2,15 @@
   {
     "name": "Clair Obscur : Expédition 33",
     "year": 2025,
-    "image": "img/23_clair_obscur.jpg",
+    "image": "img/23_Clair_Obscur.jpg",
     "description": "Un RPG fantastique mêlant combat au tour par tour réactif et visuels envoûtants, dans une quête désespérée pour empêcher la Peintresse de dessiner le nombre '33'.",
     "nominees": [
-      {"name": "Clair Obscur : Expédition 33", "image": "img/23_clair_obscur.jpg"},
-      {"name": "Ghost of Yōtei", "image": "img/23_ghost_of_yotei.jpg"},
-      {"name": "Hollow Knight", "image": "img/23_hollow_knight.jpg"},
-      {"name": "Death Stranding 2: On The Beach", "image": "img/23_death_stranding_2.jpg"},
-      {"name": "Doom: The Dark Ages", "image": "img/23_doom_dark_ages.jpg"},
-      {"name": "Monster Hunter Wilds", "image": "img/23_monster_hunter_wilds.jpg"}
+      {"name": "Clair Obscur : Expédition 33", "image": "img/23_Clair_Obscur.jpg"},
+      {"name": "Ghost of Yōtei", "image": "img/23_Ghost_Of_Yotei.jpg"},
+      {"name": "Hollow Knight SlikSong", "image": "img/23_Silk_Song.jpg"},
+      {"name": "Death Stranding 2: On The Beach", "image": "img/23_Death_Stranding_2.jpg"},
+      {"name": "Doom: The Dark Ages", "image": "img/23_Doom_Dark_Ages.jpg"},
+      {"name": "Monster Hunter Wilds", "image": "img/23_Monster_Hunter_Wilds.jpg"}
     ]
   },
   {
@@ -20,11 +20,11 @@
     "description": "Un jeu de plateforme exceptionnellement inventif qui célèbre l'histoire de PlayStation tout en offrant un gameplay joyeux et parfaitement maîtrisé.",
     "nominees": [
       {"name": "Astro Bot", "image": "img/22_Astro_Bot.jpg"},
-      {"name": "Balatro", "image": "img/22_balatro.jpg"},
-      {"name": "Black Myth: Wukong", "image": "img/22_black_myth_wukong.jpg"},
-      {"name": "Elden Ring: Shadow of the Erdtree", "image": "img/22_elden_ring_shadow.jpg"},
-      {"name": "Final Fantasy VII Rebirth", "image": "img/22_ff7_rebirth.jpg"},
-      {"name": "Metaphor: ReFantazio", "image": "img/22_metaphor_refantazio.jpg"}
+      {"name": "Balatro", "image": "img/22_Balatro.jpg"},
+      {"name": "Black Myth: Wukong", "image": "img/22_Black_Myth_Wukong.jpg"},
+      {"name": "Elden Ring: Shadow of the Erdtree", "image": "img/22_Elden_Ring_Shadow.jpg"},
+      {"name": "Final Fantasy VII Rebirth", "image": "img/22_Final_Fantasy_VII_Rebirth.jpg"},
+      {"name": "Metaphor: ReFantazio", "image": "img/22_Metaphor_ReFantazio.jpg"}
     ]
   },
   {
@@ -34,11 +34,11 @@
     "description": "Un chef-d'œuvre du RPG où la liberté absolue du joueur se conjugue à une écriture remarquable et des combats tactiques profonds.",
     "nominees": [
       {"name": "Baldur's Gate 3", "image": "img/21_Baldurs_Gate_3.jpg"},
-      {"name": "Alan Wake 2", "image": "img/21_alan_wake_2.jpg"},
-      {"name": "The Legend of Zelda: Tears of the Kingdom", "image": "img/21_zelda_tears.jpg"},
-      {"name": "Marvel's Spider-Man 2", "image": "img/21_spider_man_2.jpg"},
-      {"name": "Resident Evil 4", "image": "img/21_resident_evil_4.jpg"},
-      {"name": "Super Mario Bros. Wonder", "image": "img/21_mario_wonder.jpg"}
+      {"name": "Alan Wake 2", "image": "img/21_Alan_Wake_2.jpg"},
+      {"name": "The Legend of Zelda: Tears of the Kingdom", "image": "img/21_Zelda_Tears.jpg"},
+      {"name": "Marvel's Spider-Man 2", "image": "img/21_Marvel_Spider_Man_2.jpg"},
+      {"name": "Resident Evil 4", "image": "img/21_Resident_Evil_4.jpg"},
+      {"name": "Super Mario Bros. Wonder", "image": "img/21_Super_Mario_Bros_Wonder.jpg"}
     ]
   },
   {
@@ -48,11 +48,11 @@
     "description": "Une révolution du jeu en monde ouvert, fruit de la collaboration entre Hidetaka Miyazaki et G.R.R. Martin, alliant conception de niveaux magistrale et défis intraitables.",
     "nominees": [
       {"name": "Elden Ring", "image": "img/20_Elden_Ring.jpg"},
-      {"name": "A Plague Tale: Requiem", "image": "img/20_plague_tale_requiem.jpg"},
-      {"name": "God of War Ragnarök", "image": "img/20_god_of_war_ragnarok.jpg"},
-      {"name": "Horizon Forbidden West", "image": "img/20_horizon_forbidden_west.jpg"},
-      {"name": "Stray", "image": "img/20_stray.jpg"},
-      {"name": "Xenoblade Chronicles 3", "image": "img/20_xenoblade_chronicles_3.jpg"}
+      {"name": "A Plague Tale: Requiem", "image": "img/20_Plague_Tale_Requiem.jpg"},
+      {"name": "God of War Ragnarök", "image": "img/20_God_Of_War_Ragnarok.jpg"},
+      {"name": "Horizon Forbidden West", "image": "img/20_Horizon_Forbidden_West.jpg"},
+      {"name": "Stray", "image": "img/20_Stray.jpg"},
+      {"name": "Xenoblade Chronicles 3", "image": "img/20_Xenoblade_Chronicles_3.jpg"}
     ]
   },
   {
@@ -62,11 +62,11 @@
     "description": "Une aventure coopérative foisonnante d'idées où chaque niveau réinvente le gameplay pour illustrer la thérapie de couple de Cody et May.",
     "nominees": [
       {"name": "It Takes Two", "image": "img/19_It_Takes_Two.jpg"},
-      {"name": "Deathloop", "image": "img/19_deathloop.jpg"},
-      {"name": "Metroid Dread", "image": "img/19_metroid_dread.jpg"},
-      {"name": "Psychonauts 2", "image": "img/19_psychonauts_2.jpg"},
-      {"name": "Ratchet & Clank: Rift Apart", "image": "img/19_ratchet_clank_rift.jpg"},
-      {"name": "Resident Evil Village", "image": "img/19_resident_evil_village.jpg"}
+      {"name": "Deathloop", "image": "img/19_Deathloop.jpg"},
+      {"name": "Metroid Dread", "image": "img/19_Metroid_Dread.jpg"},
+      {"name": "Psychonauts 2", "image": "img/19_Psychonauts_2.jpg"},
+      {"name": "Ratchet & Clank: Rift Apart", "image": "img/19_Ratchet_Clank_Rift_Apart.jpg"},
+      {"name": "Resident Evil Village", "image": "img/19_Resident_Evil_Village.jpg"}
     ]
   },
   {
@@ -76,11 +76,11 @@
     "description": "Une expérience narrative brute et émotionnellement dévastatrice explorant le cycle de la violence avec une réalisation visuelle et technique sans précédent.",
     "nominees": [
       {"name": "The Last of Us Part II", "image": "img/18_The_Last_of_Us_Part_II.jpg"},
-      {"name": "Animal Crossing: New Horizons", "image": "img/18_animal_crossing_new_horizons.jpg"},
-      {"name": "Doom Eternal", "image": "img/18_doom_eternal.jpg"},
-      {"name": "Final Fantasy VII Remake", "image": "img/18_ff7_remake.jpg"},
-      {"name": "Ghost of Tsushima", "image": "img/18_ghost_of_tsushima.jpg"},
-      {"name": "Hades", "image": "img/18_hades.jpg"}
+      {"name": "Animal Crossing: New Horizons", "image": "img/18_Animal_Crossing_New_Horizons.jpg"},
+      {"name": "Doom Eternal", "image": "img/18_Doom_Eternal.jpg"},
+      {"name": "Final Fantasy VII Remake", "image": "img/18_Final_Fantasy_VII_Remake.jpg"},
+      {"name": "Ghost of Tsushima", "image": "img/18_Ghost_of_Tsushima.jpg"},
+      {"name": "Hades", "image": "img/18_Hades.jpg"}
     ]
   },
   {
@@ -90,11 +90,11 @@
     "description": "Un jeu d'action exigeant centré sur la précision chirurgicale, la parade et l'infiltration dans un Japon Sengoku imprégné de mythes.",
     "nominees": [
       {"name": "Sekiro: Shadows Die Twice", "image": "img/17_Sekiro_Shadows_Die_Twice.jpg"},
-      {"name": "Control", "image": "img/17_control.jpg"},
-      {"name": "Death Stranding", "image": "img/17_death_stranding.jpg"},
-      {"name": "Resident Evil 2", "image": "img/17_resident_evil_2.jpg"},
-      {"name": "Super Smash Bros. Ultimate", "image": "img/17_smash_bros_ultimate.jpg"},
-      {"name": "The Outer Worlds", "image": "img/17_the_outer_worlds.jpg"}
+      {"name": "Control", "image": "img/17_Control.jpg"},
+      {"name": "Death Stranding", "image": "img/17_Death_Stranding.jpg"},
+      {"name": "Resident Evil 2", "image": "img/17_Resident_Evil_2.jpg"},
+      {"name": "Super Smash Bros. Ultimate", "image": "img/17_Super_Smash_Bros_Ultimate.jpg"},
+      {"name": "The Outer Worlds", "image": "img/17_The_Outer_Worlds.jpg"}
     ]
   },
   {
@@ -104,11 +104,11 @@
     "description": "Une réinvention magistrale de la saga mythologique, offrant un système de combat viscéral et une relation père-fils poignante filmée en un plan-séquence ininterrompu.",
     "nominees": [
       {"name": "God of War", "image": "img/16_God_of_War.jpg"},
-      {"name": "Assassin's Creed Odyssey", "image": "img/16_assassins_creed_odyssey.jpg"},
-      {"name": "Celeste", "image": "img/16_celeste.jpg"},
-      {"name": "Marvel's Spider-Man", "image": "img/16_spider_man.jpg"},
-      {"name": "Monster Hunter: World", "image": "img/16_monster_hunter_world.jpg"},
-      {"name": "Red Dead Redemption 2", "image": "img/16_red_dead_redemption_2.jpg"}
+      {"name": "Assassin's Creed Odyssey", "image": "img/16_Assassin's_Creed_Odyssey.jpg"},
+      {"name": "Celeste", "image": "img/16_Celeste.jpg"},
+      {"name": "Marvel's Spider-Man", "image": "img/16_Marvel's_Spider-Man.jpg"},
+      {"name": "Monster Hunter: World", "image": "img/16_Monster_Hunter_World.jpg"},
+      {"name": "Red Dead Redemption 2", "image": "img/16_Red_Dead_Redemption_2.jpg"}
     ]
   },
   {
@@ -118,10 +118,10 @@
     "description": "Une redéfinition historique de l'exploration et de l'aventure, offrant un monde bac à sable basé sur des règles physiques émergentes.",
     "nominees": [
       {"name": "The Legend of Zelda: Breath of the Wild", "image": "img/15_The_Legend_of_Zelda_BOTW.jpg"},
-      {"name": "Horizon Zero Dawn", "image": "img/15_horizon_zero_dawn.jpg"},
-      {"name": "Persona 5", "image": "img/15_persona_5.jpg"},
-      {"name": "PlayerUnknown's Battlegrounds", "image": "img/15_pubg.jpg"},
-      {"name": "Super Mario Odyssey", "image": "img/15_super_mario_odyssey.jpg"}
+      {"name": "Horizon Zero Dawn", "image": "img/15_Horizon_Zero_Dawn.jpg"},
+      {"name": "Persona 5", "image": "img/15_Persona_5.jpg"},
+      {"name": "PlayerUnknown's Battlegrounds", "image": "img/15_PlayerUnknown's_Battlegrounds.jpg"},
+      {"name": "Super Mario Odyssey", "image": "img/15_Super_Mario_Odyssey.jpg"}
     ]
   },
   {
@@ -131,10 +131,10 @@
     "description": "Un hero-shooter vibrant et compétitif qui a défini les standards de l'e-sport avec son casting de personnages charismatiques et son gameplay centré sur l'équipe.",
     "nominees": [
       {"name": "Overwatch", "image": "img/14_Overwatch.jpg"},
-      {"name": "Doom", "image": "img/14_doom.jpg"},
-      {"name": "Inside", "image": "img/14_inside.jpg"},
-      {"name": "Titanfall 2", "image": "img/14_titanfall_2.jpg"},
-      {"name": "Uncharted 4: A Thief's End", "image": "img/14_uncharted_4.jpg"}
+      {"name": "Doom", "image": "img/14_Doom.jpg"},
+      {"name": "Inside", "image": "img/14_Inside.jpg"},
+      {"name": "Titanfall 2", "image": "img/14_Titanfall_2.jpg"},
+      {"name": "Uncharted 4: A Thief's End", "image": "img/14_Uncharted_4.jpg"}
     ]
   },
   {
@@ -144,10 +144,10 @@
     "description": "L'un des plus grands RPG scénarisés de l'histoire, rempli de quêtes aux dilemmes moraux complexes dans un monde massif et magnifiquement sombre.",
     "nominees": [
       {"name": "The Witcher 3: Wild Hunt", "image": "img/13_The_Witcher_3.jpg"},
-      {"name": "Bloodborne", "image": "img/13_bloodborne.jpg"},
-      {"name": "Fallout 4", "image": "img/13_fallout_4.jpg"},
-      {"name": "Super Mario Maker", "image": "img/13_super_mario_maker.jpg"},
-      {"name": "Metal Gear Solid V: The Phantom Pain", "image": "img/13_mgsv.jpg"}
+      {"name": "Bloodborne", "image": "img/13_Bloodborne.jpg"},
+      {"name": "Fallout 4", "image": "img/13_Fallout_4.jpg"},
+      {"name": "Super Mario Maker", "image": "img/13_Super_Mario_Maker.jpg"},
+      {"name": "Metal Gear Solid V: The Phantom Pain", "image": "img/13_Metal_Gear_Solid_V.jpg"}
     ]
   },
   {
@@ -157,10 +157,10 @@
     "description": "Un RPG politique épique centré sur la fermeture de failles démoniaques avec une gestion tactique poussée de son équipe de héros.",
     "nominees": [
       {"name": "Dragon Age: Inquisition", "image": "img/12_Dragon_Age_Inquisition.jpg"},
-      {"name": "Bayonetta 2", "image": "img/12_bayonetta_2.jpg"},
-      {"name": "Dark Souls II", "image": "img/12_dark_souls_2.jpg"},
-      {"name": "Hearthstone", "image": "img/12_hearthstone.jpg"},
-      {"name": "Middle-earth: Shadow of Mordor", "image": "img/12_shadow_of_mordor.jpg"}
+      {"name": "Bayonetta 2", "image": "img/12_Bayonetta_2.jpg"},
+      {"name": "Dark Souls II", "image": "img/12_Dark_Souls_2.jpg"},
+      {"name": "Hearthstone", "image": "img/12_Hearthstone.jpg"},
+      {"name": "Middle-earth: Shadow of Mordor", "image": "img/12_Shadow_of_Mordor.jpg"}
     ]
   },
   {
@@ -170,10 +170,10 @@
     "description": "Une satire monumentale de la culture américaine vue à travers la vie entremêlée de trois criminels évoluant dans l'immense monde de Los Santos.",
     "nominees": [
       {"name": "Grand Theft Auto V", "image": "img/11_Grand_theft_auto_V.jpg"},
-      {"name": "BioShock Infinite", "image": "img/11_bioshock_infinite.jpg"},
-      {"name": "Super Mario 3D World", "image": "img/11_super_mario_3d_world.jpg"},
-      {"name": "The Last of Us", "image": "img/11_the_last_of_us.jpg"},
-      {"name": "Tomb Raider", "image": "img/11_tomb_raider.jpg"}
+      {"name": "BioShock Infinite", "image": "img/11_BioShock_Infinite.jpg"},
+      {"name": "Super Mario 3D World", "image": "img/11_Super_Mario_3D_World.jpg"},
+      {"name": "The Last of Us", "image": "img/11_The_Last_of_Us.jpg"},
+      {"name": "Tomb Raider", "image": "img/11_Tomb_Raider.jpg"}
     ]
   },
   {
@@ -183,10 +183,10 @@
     "description": "Un chef-d'œuvre de la narration en jeu vidéo, forçant les joueurs à faire des choix déchirants dans un monde post-apocalyptique aux côtés de Lee et Clementine.",
     "nominees": [
       {"name": "The Walking Dead", "image": "img/10_The_Walking_Dead.jpg"},
-      {"name": "Assassin's Creed III", "image": "img/10_assassins_creed_3.jpg"},
-      {"name": "Dishonored", "image": "img/10_dishonored.jpg"},
-      {"name": "Journey", "image": "img/10_journey.jpg"},
-      {"name": "Mass Effect 3", "image": "img/10_mass_effect_3.jpg"}
+      {"name": "Assassin's Creed III", "image": "img/10_Assassin's_Creed_III.jpg"},
+      {"name": "Dishonored", "image": "img/10_Dishonored.jpg"},
+      {"name": "Journey", "image": "img/10_Journey.jpg"},
+      {"name": "Mass Effect 3", "image": "img/10_Mass_Effect_3.jpg"}
     ]
   },
   {
@@ -196,8 +196,8 @@
     "description": "Le RPG fantastique par excellence offrant une immersion inégalée, la liberté de devenir ce que l'on veut et bien sûr... des dragons.",
     "nominees": [
       {"name": "The Elder Scrolls V: Skyrim", "image": "img/9_The_Elder_Scrolls_V.jpg"},
-      {"name": "Batman: Arkham City", "image": "img/9_batman_arkham_city.jpg"},
-      {"name": "The Legend of Zelda: Skyward Sword", "image": "img/9_zelda_skyward_sword.jpg"},
+      {"name": "Batman: Arkham City", "image": "img/9_Batman_Arkham_City.jpg"},
+      {"name": "The Legend of Zelda: Skyward Sword", "image": "img/9_Zelda_Skyward_Sword.jpg"},
       {"name": "Portal 2", "image": "img/9_portal_2.jpg"},
       {"name": "Uncharted 3: Drake's Deception", "image": "img/9_uncharted_3.jpg"}
     ]
