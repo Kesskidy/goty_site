@@ -184,7 +184,7 @@ function createBarre() {
 
         const segmentHeight = 30;
         const gap = 10;
-        const numSegments = Math.floor(totalHeight / (segmentHeight + gap));
+        const numSegments = Math.floor(totalHeight / (segmentHeight + gap)) - 10;
 
         for (let i = 0; i < numSegments; i++) {
             const segment = document.createElement('div');
@@ -242,8 +242,8 @@ function createBarre() {
             if (segmentIndex < 0) segmentIndex = 0;
             if (segmentIndex >= numSegments) segmentIndex = numSegments - 1;
 
-            // Le point de départ réel : pil poil au centre de ce segment
-            const startY = (segmentIndex * step) + (segmentHeight / 2);
+            // Le point de départ réel : en bas de ce segment
+            const startY = (segmentIndex * step) + segmentHeight -1;
 
             // Calcul géométrique de base
             const deltaX = targetX - 1; // 1px est le bord gauche de la ligne (qui fait 2px total)
