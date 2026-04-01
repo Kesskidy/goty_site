@@ -696,13 +696,38 @@ a {
     }
 }
 
-// Accessibility
-button:focus,
-input:focus,
-a:focus,
-.nominee-radio:focus-within {
+// Accessibility improvements for keyboard navigation
+.goty-img-button:focus,
+.nominee-radio:focus-within input[type="radio"] {
+    outline: 3px solid $gold-tga;
+    outline-offset: 4px;
+    box-shadow: 0 0 10px rgba($gold-tga, 0.5);
+}
+
+.nominee-radio input[type="radio"]:focus-visible + .nominee-content {
     outline: 2px solid $gold-tga;
     outline-offset: 2px;
+}
+
+// Vote count update animation
+@keyframes vote-count-pulse {
+    0% {
+        transform: scale(1);
+        background-color: transparent;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: rgba($gold-tga, 0.2);
+    }
+    100% {
+        transform: scale(1);
+        background-color: transparent;
+    }
+}
+
+.vote-count-updated {
+    animation: vote-count-pulse 0.6s ease-in-out;
+    font-weight: 600;
 }
 
 .skip-link {
