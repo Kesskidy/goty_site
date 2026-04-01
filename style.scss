@@ -191,7 +191,7 @@ a {
         position: relative;
     }
 
-    .goty-content {
+    &-content {
         position: relative;
         z-index: 20;
         
@@ -220,7 +220,7 @@ a {
 
     }
 
-    .goty-title {
+    &-title {
         font-family: $font-body;
         font-size: 1rem;
         line-height: 1.6;
@@ -234,7 +234,7 @@ a {
         margin: 5px 10px;
     }
 
-    .goty-details {
+    &-details {
         position: absolute;
         top: 60px;
         left: 0;
@@ -246,28 +246,27 @@ a {
         border: 2px solid rgba($gold-tga, 0.4);
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        h4 {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
     }
 
-    .goty-desc {
+    &-desc {
         color: #fff;
         font-family: $font-body;
         font-size: 1rem;
         line-height: 1.6;
     }
 
-    .goty-details h4 {
-        margin-top: 15px;
-        margin-bottom: 5px;
-    }
-
-    .goty-details-text {
+    &-details-text {
         font-family: $font-body;
         font-size: 0.8rem;
         line-height: 1.6;
         margin: 5px 10px;
     }
 
-    .goty-vote-item {
+    &-vote-item {
         font-family: $font-body;
         font-size: 0.7rem;
         line-height: 1.6;
@@ -275,7 +274,7 @@ a {
         color: $gold-tga;
     }
 
-    .goty-voting-list {
+    &-voting-list {
         list-style: none;
         padding: 0;
         
