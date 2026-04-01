@@ -45,7 +45,7 @@ function afficherGoty() {
                         <input type="radio" name="vote-${goty.year}" value="${nominee.name}" aria-label="Voter pour ${nominee.name}, actuellement ${count} votes" ${isChecked}>
                         <div class="nominee-content">
                             <img src="${nominee.image}" alt="Image du jeu ${nominee.name}" class="nominee-img">
-                            <p>${nominee.name}</p>
+                            <p class="nominee-content-name">${nominee.name}</p>
                             <span id="vote-count-${goty.year}-${nominee.name.replace(/\s+/g, '-')}" class="vote-count" aria-live="polite">${count} votes</span>
                         </div>
                     </label>`;
@@ -215,7 +215,7 @@ function createBarre() {
             duration: 0.5
         }, 0);
 
-        // AJOUT : Création et animation des lignes diagonales connectrices parfaitement synchronisées
+        // AJOUT : Création et animation des lignes diagonales de liaison parfaitement synchronisées
         const lineWrapperRect = lineWrapper.getBoundingClientRect();
         const barreRect = barre.getBoundingClientRect();
         const gotyItems = document.querySelectorAll('.goty-item');
