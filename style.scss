@@ -65,10 +65,10 @@ header {
     }
 
     nav {
-        display: block; // On garde le float ici pour l'effet d'imbrication (lettrine)
+        display: block;
         .logo-lettrine {
             float: left;
-            width: 15%; // Environ 2 colonnes sur 12
+            width: 15%;
             max-width: 150px;
             height: auto;
             shape-outside: margin-box; 
@@ -175,9 +175,9 @@ a {
 }
 
 .about {
-    grid-column: 1 / 13; // La section occupe tout le container
+    grid-column: 1 / 13;
     display: grid;
-    grid-template-columns: repeat(12, 1fr); // Elle-même divisée en 12
+    grid-template-columns: repeat(12, 1fr);
     column-gap: $gap;
     margin-top: 2rem;
 
@@ -192,8 +192,6 @@ a {
     }
 
     p {
-        // --- C'EST ICI QUE L'ALIGNEMENT SE JOUE ---
-        // On fait commencer le texte à la colonne 5 pour l'aligner sous "Game"
         grid-column: 4 / 12; 
         font-family: $font-body;
         font-size: 1.1rem;
@@ -203,13 +201,13 @@ a {
         padding-left: 2rem;
 
         @media (max-width: $tablet) {
-            grid-column: 1 / 13; // Sur tablette, on prend toute la place
+            grid-column: 1 / 13;
             font-size: 1rem;
             padding-left: 1.5rem;
         }
 
         @media (max-width: $mobile) {
-            grid-column: 1 / 13; // Sur mobile, on prend toute la place
+            grid-column: 1 / 13;
             font-size: 0.9rem;
             padding-left: 1rem;
             line-height: 1.6;
@@ -223,7 +221,7 @@ a {
     grid-template-columns: repeat(12, 1fr);
     column-gap: $gap;
     margin-top: 2rem;
-    position: relative; // Added for absolute positioning of line-wrapper
+    position: relative;
 
     @media (max-width: $tablet) {
         margin-top: 1.5rem;
@@ -294,11 +292,11 @@ a {
 
 .connector-line {
     position: absolute;
-    left: 1px; // Centre de la ligne
+    left: 1px;
     height: 2px;
     background-color: $gold-tga;
     transform-origin: left center;
-    z-index: -1; // Derrière la ligne et les contenus
+    z-index: -1;
 
     @media (max-width: $mobile) {
         display: none;
@@ -309,7 +307,7 @@ a {
     grid-column: 1 / 13;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 3rem 1rem; // Gap vertical 3rem, horizontal 1rem
+    gap: 3rem 1rem;
 
     @media (max-width: $tablet) {
         gap: 2rem 0.75rem;
@@ -320,28 +318,28 @@ a {
     }
 
     &-left {
-        grid-column: 1 / 6; // Colonnes 1 à 5
+        grid-column: 1 / 6;
 
         @media (max-width: $tablet) {
-            grid-column: 1 / 7; // Sur tablette, moitié gauche
+            grid-column: 1 / 7;
         }
 
         @media (max-width: $mobile) {
-            grid-column: 1 / 13; // Sur mobile, pleine largeur
+            grid-column: 1 / 13;
             text-align: left;
         }
     }
 
     &-right {
-        grid-column: 8 / 13; // Colonnes 8 à 12
+        grid-column: 8 / 13;
         text-align: right;
 
         @media (max-width: $tablet) {
-            grid-column: 7 / 13; // Sur tablette, moitié droite
+            grid-column: 7 / 13;
         }
 
         @media (max-width: $mobile) {
-            grid-column: 1 / 13; // Sur mobile, pleine largeur
+            grid-column: 1 / 13;
             text-align: left;
         }
     }
