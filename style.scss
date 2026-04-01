@@ -82,10 +82,10 @@ header {
             }
 
             @media (max-width: $mobile) {
-                float: none;
-                display: block;
-                width: 60px;
-                margin: 0 0 1rem 0;
+                width: 50px;
+                max-width: 50px;
+                margin-right: 0.75rem;
+                margin-bottom: 0;
             }
         }
         
@@ -97,15 +97,6 @@ header {
             letter-spacing: -0.03em;
             text-transform: uppercase;
             display: inline;
-
-            @media (max-width: $tablet) {
-                font-size: clamp(2rem, 10vw, 6rem);
-            }
-
-            @media (max-width: $mobile) {
-                font-size: clamp(1.5rem, 8vw, 3rem);
-                display: block;
-            }
         }
     }
 }
