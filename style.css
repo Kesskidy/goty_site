@@ -204,6 +204,18 @@ a:hover {
   line-height: 1.6;
   margin: 5px 10px;
 }
+.goty .goty-badge {
+  display: inline-block;
+  margin: 0.5rem 10px 0.25rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 215, 95, 0.2);
+  border: 1px solid rgba(255, 215, 95, 0.6);
+  color: #ffd75f;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
 .goty p {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;

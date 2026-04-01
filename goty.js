@@ -1,12 +1,15 @@
 const gotyTableau = [];
+const GOTY_VOTES_KEY = 'gotyVotes';
+const GOTY_VOTE_COUNTS_KEY = 'gotyVoteCounts';
+const LIKELY_GAMES_KEY = 'likelyGames';
 
 function getVotedGame(year) {
-    const votes = JSON.parse(localStorage.getItem('gotyVotes') || '{}');
+    const votes = JSON.parse(localStorage.getItem(GOTY_VOTES_KEY) || '{}');
     return votes[year];
 }
 
 function getVoteCounts(year) {
-    const counts = JSON.parse(localStorage.getItem('gotyVoteCounts') || '{}');
+    const counts = JSON.parse(localStorage.getItem(GOTY_VOTE_COUNTS_KEY) || '{}');
     return counts[year] || {};
 }
 
@@ -19,7 +22,30 @@ function saveVote(year, gameName) {
     const counts = JSON.parse(localStorage.getItem('gotyVoteCounts') || '{}');
     if (!counts[year]) counts[year] = {};
     counts[year][gameName] = (counts[year][gameName] || 0) + 1;
-    localStorage.setItem('gotyVoteCounts', JSON.stringify(counts));
+    localStorage.setItem(GOTY_VOTE_COUNTS_KEY, JSON.stringify(counts));
+}
+
+function loadLikelyGames() {
+    const raw = localStorage.getItem(LIKELY_GAMES_KEY);
+    if (!raw) return;
+    try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+            likelyGames.length = 0;
+            parsed.forEach(game => {
+                if (game && typeof game.name === 'string' && typeof game.votes === 'number') {
+                    likelyGames.push(game);
+                }
+            });
+            likelyGames.sort((a, b) => b.votes - a.votes);
+        }
+    } catch (err) {
+        console.warn('Impossible de charger likelyGames depuis localStorage', err);
+    }
+}
+
+function saveLikelyGames() {
+    localStorage.setItem(LIKELY_GAMES_KEY, JSON.stringify(likelyGames));
 }
 
 function afficherGoty() {
@@ -33,6 +59,7 @@ function afficherGoty() {
         const votedGame = getVotedGame(goty.year);
         const voteCounts = getVoteCounts(goty.year);
         const displayGame = votedGame ? goty.nominees.find(n => n.name === votedGame) : {name: goty.name, image: goty.image};
+        const gotyAccordingText = votedGame ? '<span class="goty-badge">GOTY selon vous</span>' : '';
 
         let nomineesHtml = '';
         if (goty.nominees && goty.nominees.length > 0) {
@@ -54,9 +81,10 @@ function afficherGoty() {
         }
 
         gotyContainer.innerHTML += `
-            <div class="${sideClass} goty-item">
+            <div class="${sideClass} goty-item" data-year="${goty.year}">
                 <div class="goty-content">
                     <h3>${goty.year}</h3>
+                    ${gotyAccordingText}
                     <button class="goty-img-button" aria-label="Cliquez pour voir les détails et voter pour ${goty.year}">
                         <img src="${displayGame.image}" alt="${displayGame.name}" class="goty-img-clickable">
                     </button>
@@ -88,9 +116,6 @@ function setupInteractivity() {
             
             const isLeft = item.classList.contains('goty-left');
             const isMobile = window.innerWidth <= 768;
-            
-            // Determine movement. On mobile, slide image up or fade text over. 
-            // For simplicity, we just slide horizontally by 105% on desktop.
             const xVal = isMobile ? 0 : (isLeft ? "110%" : "-110%");
             const yVal = isMobile ? (isOpen ? "150px" : 0) : 0; 
             
@@ -119,15 +144,13 @@ function setupInteractivity() {
             }
         });
 
-        // Voting functionality
         const votingForm = item.querySelector('.voting-form');
         if (votingForm) {
             votingForm.addEventListener('change', (e) => {
                 if (e.target.type === 'radio') {
-                    const year = goty.year;
+                    const year = Number(item.dataset.year);
                     const gameName = e.target.value;
                     saveVote(year, gameName);
-                    // Update display
                     afficherGoty();
                 }
             });
@@ -233,7 +256,6 @@ function createBarre() {
             const imgTopInBarre = imgRect.top - barreRect.top;
             const targetY = imgTopInBarre + (imgRect.height / 2);
 
-            // Souhait : partir plus haut (ex: 120px)
             const desiredStartY = targetY - 120;
             
             // On calcule l'indice du segment le plus proche
@@ -275,4 +297,41 @@ function createBarre() {
     });
 }
 
-export { gotyTableau, afficherGoty, chargerGoty, createBarre };
+const likelyGames = [];
+
+/*Lorsque quelqu'un like un jeu, le vote est enregistré dans le tableau likelyGames. 
+Si le jeu n'est pas déjà dans le tableau, il est ajouté avec un compteur de votes initialisé à 1. 
+Si le jeu est déjà présent, son compteur de votes est incrémenté. 
+Ensuite, le tableau likelyGames est trié en fonction du nombre de votes pour que les jeux les plus populaires soient affichés en premier. 
+Enfin, la fonction updateLikelyGamesUI() est appelée pour mettre à jour l'affichage des jeux les plus susceptibles d'être votés comme GOTY.*/
+
+function likeGame(gameName) {
+    const game = likelyGames.find(g => g.name === gameName);
+    if (game) {
+        game.votes++;
+    } else {
+        likelyGames.push({ name: gameName, votes: 1 });
+    }
+    likelyGames.sort((a, b) => b.votes - a.votes);
+    saveLikelyGames();
+    updateLikelyGamesUI();
+}
+
+// initialisation de likelyGames depuis localStorage
+loadLikelyGames();
+
+function updateLikelyGamesUI() {
+    const likelyContainer = document.querySelector('.likely-games');
+    if (!likelyContainer) return;
+    likelyContainer.innerHTML = '';
+
+    likelyGames.forEach(game => {
+        const gameElement = document.createElement('div');
+        gameElement.classList.add('likely-game');
+        gameElement.innerHTML = `<h3>${game.name}</h3><p>Votes: ${game.votes}</p>`;
+
+        likelyContainer.appendChild(gameElement);
+    });
+}
+
+export { gotyTableau, afficherGoty, chargerGoty, createBarre, likeGame };
