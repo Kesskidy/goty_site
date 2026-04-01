@@ -12,7 +12,7 @@ Une expérience web interactive et animée retraçant l'histoire des jeux ayant 
   - La liste des autres grand jeux qui étaient nommés pour la même année.
 - **Chargement dynamique :** L'ensemble des données (titres, années, descriptions, images, nominés) est chargé via un fichier externe `goty.json`, ce qui permet de mettre à jour la liste sans toucher au code principal.
 
-## 🛠️ Technologies Utilisées
+##  Technologies Utilisées
 
 - **HTML5** : Structure de la page.
 - **SCSS / CSS3** : Design moderne, mise en page et animations CSS.
@@ -32,7 +32,7 @@ Une expérience web interactive et animée retraçant l'histoire des jeux ayant 
 └── 📁 img/            # Répertoire contenant les jaquettes et images de chaque jeu
 ```
 
-## 🚀 Installation et Lancement
+##  Installation et Lancement
 
 1. **Cloner ou télécharger** le dossier sur votre machine.
 2. **Compiler le SCSS (si vous souhaitez modifier les couleurs ou le design) :**
