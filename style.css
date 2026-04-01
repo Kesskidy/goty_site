@@ -293,7 +293,7 @@ a:hover {
   border-color: #ffd75f;
   background-color: rgba(255, 215, 95, 0.1);
 }
-.nominee-item .nominee-img {
+.nominee-item-img {
   width: 100%;
   max-width: 120px;
   aspect-ratio: 16/9;

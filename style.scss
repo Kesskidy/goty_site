@@ -76,7 +76,6 @@ h3 {
     margin: 1vw 0;
     font-size: 2.5rem;
 }
-
 h4 {
     font-family: $font-titles;
     color: $gold-tga;
@@ -153,7 +152,6 @@ a {
     left: 0;
     width: 100%;
 }
-
 .barre-segment {
     position: absolute;
     left: 0;
@@ -170,7 +168,6 @@ a {
     transform-origin: left center;
     z-index: -1; // Derrière la ligne et les contenus
 }
-
 
 .goty {
     grid-column: 1 / 13;
@@ -328,7 +325,7 @@ a {
         background-color: rgba($gold-tga, 0.1);
     }
 
-    .nominee-img {
+    &-img {
         width: 100%;
         max-width: 120px;
         aspect-ratio: 16/9;
