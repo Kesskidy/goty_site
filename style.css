@@ -689,12 +689,35 @@ a:hover {
     pointer-events: auto;
   }
 }
-button:focus,
-input:focus,
-a:focus,
-.nominee-radio:focus-within {
+.goty-img-button:focus,
+.nominee-radio:focus-within input[type=radio] {
+  outline: 3px solid #ffd75f;
+  outline-offset: 4px;
+  box-shadow: 0 0 10px rgba(255, 215, 95, 0.5);
+}
+
+.nominee-radio input[type=radio]:focus-visible + .nominee-content {
   outline: 2px solid #ffd75f;
   outline-offset: 2px;
+}
+
+@keyframes vote-count-pulse {
+  0% {
+    transform: scale(1);
+    background-color: transparent;
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: rgba(255, 215, 95, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    background-color: transparent;
+  }
+}
+.vote-count-updated {
+  animation: vote-count-pulse 0.6s ease-in-out;
+  font-weight: 600;
 }
 
 .skip-link {
