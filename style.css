@@ -174,23 +174,23 @@ a:hover {
 .goty-item {
   position: relative;
 }
-.goty .goty-content {
+.goty-content {
   position: relative;
   z-index: 20;
 }
-.goty .goty-content .goty-img-button {
+.goty-content .goty-img-button {
   border: none;
   background: none;
   padding: 0;
   cursor: pointer;
   border-radius: 10px;
 }
-.goty .goty-content .goty-img-button:focus {
+.goty-content .goty-img-button:focus {
   outline: 3px solid #ffd75f;
   outline-offset: 4px;
   box-shadow: 0 0 10px rgba(255, 215, 95, 0.5);
 }
-.goty .goty-content img {
+.goty-content img {
   width: 100%;
   max-width: 500px;
   aspect-ratio: 16/9;
@@ -198,23 +198,11 @@ a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-.goty .goty-title {
+.goty-title {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   margin: 5px 10px;
-}
-.goty .goty-badge {
-  display: inline-block;
-  margin: 0.5rem 10px 0.25rem;
-  padding: 0.25rem 0.6rem;
-  background: rgba(255, 215, 95, 0.2);
-  border: 1px solid rgba(255, 215, 95, 0.6);
-  color: #ffd75f;
-  font-family: "Fira Sans", sans-serif;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  border-radius: 4px;
 }
 .goty p {
   font-family: "Open Sans", sans-serif;
@@ -222,7 +210,7 @@ a:hover {
   line-height: 1.6;
   margin: 5px 10px;
 }
-.goty .goty-details {
+.goty-details {
   position: absolute;
   top: 60px;
   left: 0;
@@ -235,34 +223,34 @@ a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-.goty .goty-desc {
+.goty-details h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.goty-desc {
   color: #fff;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
-.goty .goty-details h4 {
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
-.goty .goty-details-text {
+.goty-details-text {
   font-family: "Open Sans", sans-serif;
   font-size: 0.8rem;
   line-height: 1.6;
   margin: 5px 10px;
 }
-.goty .goty-vote-item {
+.goty-vote-item {
   font-family: "Open Sans", sans-serif;
   font-size: 0.7rem;
   line-height: 1.6;
   margin: 5px 10px;
   color: #ffd75f;
 }
-.goty .goty-voting-list {
+.goty-voting-list {
   list-style: none;
   padding: 0;
 }
-.goty .goty-voting-list li {
+.goty-voting-list li {
   color: #ccc;
   font-family: "Open Sans", sans-serif;
   font-size: 0.95rem;
@@ -270,7 +258,7 @@ a:hover {
   position: relative;
   margin-bottom: 6px;
 }
-.goty .goty-voting-list li::before {
+.goty-voting-list li::before {
   content: "•";
   color: #ffd75f;
   position: absolute;
