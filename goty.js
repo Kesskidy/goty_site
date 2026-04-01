@@ -18,7 +18,6 @@ function saveVote(year, gameName) {
     votes[year] = gameName;
     localStorage.setItem('gotyVotes', JSON.stringify(votes));
 
-    // Increment count
     const counts = JSON.parse(localStorage.getItem('gotyVoteCounts') || '{}');
     if (!counts[year]) counts[year] = {};
     counts[year][gameName] = (counts[year][gameName] || 0) + 1;
@@ -119,14 +118,12 @@ function setupInteractivity() {
             const isLeft = item.classList.contains('goty-left');
             
             if (isOpen) {
-                // Close any previously open item
                 if (currentOpenItem && currentOpenItem !== item) {
                     const prevButton = currentOpenItem.querySelector('.goty-img-button');
                     prevButton.click();
                 }
                 currentOpenItem = item;
 
-                // Blur other items (except on mobile)
                 items.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.add('blurred');
@@ -135,21 +132,18 @@ function setupInteractivity() {
                 item.classList.add('active');
                 
                 if (isMobile) {
-                    // Mobile: modal behavior with fixed positioning
                     gsap.to(details, { 
                         opacity: 1, 
                         duration: 0.4, 
                         ease: "power2.out" 
                     });
                 } else {
-                    // Desktop: slide animation
                     const xVal = isLeft ? "110%" : "-110%";
                     gsap.to(content, { x: xVal, duration: 0.6, ease: "power3.out" });
                     gsap.to(details, { opacity: 1, duration: 0.5, delay: 0.3, ease: "power2.out" });
                 }
                 details.style.pointerEvents = 'auto';
             } else {
-                // Remove blur
                 items.forEach(otherItem => {
                     otherItem.classList.remove('blurred');
                 });
@@ -157,14 +151,12 @@ function setupInteractivity() {
                 currentOpenItem = null;
                 
                 if (isMobile) {
-                    // Mobile: fade out
                     gsap.to(details, { 
                         opacity: 0, 
                         duration: 0.3, 
                         ease: "power2.in" 
                     });
                 } else {
-                    // Desktop: slide back
                     gsap.to(content, { x: 0, duration: 0.6, ease: "power3.inOut" });
                     gsap.to(details, { opacity: 0, duration: 0.3, ease: "power2.in" });
                 }
@@ -172,14 +164,12 @@ function setupInteractivity() {
             }
         });
 
-        // Close when clicking outside (on any element that's blurred or on backdrop)
         document.addEventListener('click', (e) => {
             if (isOpen && !item.contains(e.target) && e.target !== button) {
                 button.click();
             }
         });
 
-        // Prevent closing when clicking inside the details panel
         details.addEventListener('click', (e) => {
             e.stopPropagation();
         });
@@ -191,8 +181,7 @@ function setupInteractivity() {
                     const year = Number(item.dataset.year);
                     const gameName = e.target.value;
                     saveVote(year, gameName);
-                    
-                    // Update vote counts only in the current item without closing or rebuilding everything
+
                     updateItemVotes(item, year);
                 }
             });
@@ -205,14 +194,12 @@ function updateItemVotes(item, year) {
     const voteCountElements = item.querySelectorAll('.vote-count');
     
     voteCountElements.forEach(el => {
-        const id = el.id; // Format: vote-count-{year}-{game-name}
+        const id = el.id;
         const gameName = id.replace(`vote-count-${year}-`, '').replace(/-/g, ' ');
         const count = voteCounts[gameName] || 0;
         el.textContent = `${count} votes`;
         el.setAttribute('aria-live', 'polite');
     });
-
-    // Update the main image display if this was the only voted game
     const votedGame = getVotedGame(year);
     const goty = gotyTableau.find(g => g.year === year);
     if (goty && votedGame) {
@@ -226,7 +213,6 @@ function updateItemVotes(item, year) {
             img.alt = displayGame.name;
             title.textContent = displayGame.name;
             
-            // Add badge if not already present
             if (!badge && votedGame) {
                 const badgeEl = document.createElement('span');
                 badgeEl.classList.add('goty-badge');
@@ -258,7 +244,6 @@ function createBarre() {
     const gotyContainer = document.querySelector('.goty');
     const images = Array.from(gotyContainer.querySelectorAll('img'));
     
-    // Skip line animation on mobile
     if (window.innerWidth <= 768) {
         return;
     }
@@ -323,7 +308,6 @@ function createBarre() {
             duration: 0.5
         }, 0);
 
-        // Création et animation des lignes diagonales de liaison parfaitement synchronisées
         const lineWrapperRect = lineWrapper.getBoundingClientRect();
         const barreRect = barre.getBoundingClientRect();
         const gotyItems = document.querySelectorAll('.goty-item');
@@ -333,43 +317,35 @@ function createBarre() {
             const imgRect = img.getBoundingClientRect();
             const isLeft = item.classList.contains('goty-left');
 
-            // Cible horizontale relative (bord de l'image par rapport à line-wrapper)
             const targetX_viewport = isLeft ? imgRect.right : imgRect.left;
             const targetX = targetX_viewport - lineWrapperRect.left; 
 
-            // Cible verticale relative par rapport au `top` de la barre (qui commence au premier GOTY)
             const imgTopInBarre = imgRect.top - barreRect.top;
             const targetY = imgTopInBarre + (imgRect.height / 2);
 
             const desiredStartY = targetY - 120;
-            
-            // On calcule l'indice du segment le plus proche
+
             const step = segmentHeight + gap;
             let segmentIndex = Math.round(desiredStartY / step);
             if (segmentIndex < 0) segmentIndex = 0;
             if (segmentIndex >= numSegments) segmentIndex = numSegments - 1;
 
-            // Le point de départ réel : en bas de ce segment
             const startY = (segmentIndex * step) + segmentHeight -1;
 
-            // Calcul géométrique de base
-            const deltaX = targetX - 1; // 1px est le bord gauche de la ligne (qui fait 2px total)
+            const deltaX = targetX - 1;
             const deltaY = targetY - startY;
             const distance = Math.hypot(deltaX, deltaY);
             const angle = Math.atan2(deltaY, deltaX);
 
-            // Création de l'élément connecteur
             const connector = document.createElement('div');
             connector.classList.add('connector-line');
             connector.style.top = `${startY}px`;
             connector.style.width = `${distance}px`;
             connector.style.transform = `rotate(${angle}rad)`;
             
-            // On l'ajoute directement à la `barre` pour utiliser les mêmes repères verticaux que les segments
+
             barre.appendChild(connector);
 
-            // On lance son l'animation *exactement* en même temps que son segment parent !
-            // L'animation des segments commence avec un stagger de 0.1s
             const startTime = segmentIndex * 0.1;
             tl.fromTo(connector, 
                 { scaleX: 0 }, 
@@ -384,11 +360,7 @@ function createBarre() {
 
 const likelyGames = [];
 
-/*Lorsque quelqu'un like un jeu, le vote est enregistré dans le tableau likelyGames. 
-Si le jeu n'est pas déjà dans le tableau, il est ajouté avec un compteur de votes initialisé à 1. 
-Si le jeu est déjà présent, son compteur de votes est incrémenté. 
-Ensuite, le tableau likelyGames est trié en fonction du nombre de votes pour que les jeux les plus populaires soient affichés en premier. 
-Enfin, la fonction updateLikelyGamesUI() est appelée pour mettre à jour l'affichage des jeux les plus susceptibles d'être votés comme GOTY.*/
+
 
 function likeGame(gameName) {
     const game = likelyGames.find(g => g.name === gameName);
@@ -402,7 +374,7 @@ function likeGame(gameName) {
     updateLikelyGamesUI();
 }
 
-// initialisation de likelyGames depuis localStorage
+
 loadLikelyGames();
 
 function updateLikelyGamesUI() {
